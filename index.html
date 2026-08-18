@@ -1,0 +1,2653 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width,initial-scale=1,viewport-fit=cover">
+
+<title>REDWAN HTML PROTECTOR V9</title>
+
+<style>
+*{
+    box-sizing:border-box;
+}
+
+html{
+    color-scheme:dark;
+}
+
+body{
+    margin:0;
+    min-height:100vh;
+    color:#fff;
+    font-family:Arial,system-ui,sans-serif;
+    background:
+        radial-gradient(circle at 15% 0%,#172554 0,#060a14 42%,#020308 100%);
+}
+
+.app{
+    width:min(1100px,94%);
+    margin:auto;
+    padding:28px 0 45px;
+}
+
+.header{
+    text-align:center;
+    margin-bottom:24px;
+}
+
+.logo{
+    width:82px;
+    height:82px;
+    margin:auto;
+    display:grid;
+    place-items:center;
+    border-radius:25px;
+    background:linear-gradient(135deg,#00d9ff,#7c3aed);
+    font-size:32px;
+    font-weight:900;
+    box-shadow:0 0 55px #00bfff55;
+}
+
+h1{
+    margin:15px 0 6px;
+    font-size:30px;
+}
+
+.sub{
+    color:#91a0b8;
+    font-size:13px;
+}
+
+.card{
+    background:#08101edb;
+    border:1px solid #263753;
+    border-radius:22px;
+    padding:20px;
+    margin-bottom:18px;
+    box-shadow:0 20px 70px #0009;
+    backdrop-filter:blur(18px);
+}
+
+.title{
+    font-size:17px;
+    font-weight:800;
+    margin-bottom:12px;
+}
+
+textarea,
+input{
+    width:100%;
+    background:#02050a;
+    color:#e7faff;
+    border:1px solid #293b58;
+    border-radius:14px;
+    outline:none;
+}
+
+textarea{
+    min-height:330px;
+    resize:vertical;
+    padding:16px;
+    font-family:monospace;
+    font-size:13px;
+    line-height:1.5;
+}
+
+input{
+    padding:14px;
+}
+
+textarea:focus,
+input:focus{
+    border-color:#00d9ff;
+    box-shadow:0 0 0 3px #00d9ff14;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+    margin-top:13px;
+}
+
+button{
+    padding:14px;
+    border-radius:14px;
+    border:1px solid #2b3d5b;
+    background:#111d30;
+    color:#fff;
+    font-weight:800;
+    cursor:pointer;
+}
+
+button:active{
+    transform:scale(.98);
+}
+
+button:disabled{
+    opacity:.55;
+    cursor:not-allowed;
+}
+
+.primary{
+    border:0;
+    background:linear-gradient(135deg,#008cff,#713cff);
+}
+
+.success{
+    border:0;
+    background:linear-gradient(135deg,#00a878,#007c67);
+}
+
+.danger{
+    background:#35131b;
+    border-color:#682633;
+}
+
+.status{
+    display:none;
+    padding:13px;
+    border-radius:13px;
+    margin-bottom:12px;
+    color:#70f3c9;
+    background:#06251c;
+    border:1px solid #17563f;
+    line-height:1.5;
+}
+
+.status.error{
+    color:#ff9eaa;
+    background:#2b0d13;
+    border-color:#6b2634;
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:10px;
+}
+
+.stat{
+    padding:15px;
+    border-radius:14px;
+    background:#050a12;
+    border:1px solid #23344c;
+}
+
+.stat small{
+    display:block;
+    color:#7f90a8;
+    margin-bottom:7px;
+}
+
+.stat strong{
+    font-size:17px;
+}
+
+.hash{
+    margin-top:16px;
+    color:#66e8ff;
+    font-family:monospace;
+    font-size:12px;
+    word-break:break-all;
+}
+
+.notice{
+    margin-top:12px;
+    padding:13px;
+    border-radius:13px;
+    background:#07101c;
+    border:1px solid #20314a;
+    color:#9cacbf;
+    font-size:12px;
+    line-height:1.6;
+}
+
+.security-list{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:8px;
+    margin-top:12px;
+}
+
+.security-item{
+    padding:11px;
+    border-radius:11px;
+    background:#050a12;
+    border:1px solid #20314a;
+    color:#a9b8cc;
+    font-size:12px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.security-item:hover{
+    border-color:#00d9ff;
+    transform:translateY(-1px);
+}
+
+.security-item b{
+    color:#66e8ff;
+}
+
+.security-detail{
+    margin-top:10px;
+    padding:10px;
+    border-radius:9px;
+    background:#081522;
+    border:1px solid #17364b;
+    color:#91dff0;
+    line-height:1.5;
+}
+
+.engine{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:12px;
+    margin-top:12px;
+    border-radius:13px;
+    background:#051b18;
+    border:1px solid #17634e;
+    color:#7af5d2;
+    font-size:12px;
+}<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width,initial-scale=1,viewport-fit=cover">
+
+<title>REDWAN HTML PROTECTOR V9</title>
+
+<style>
+*{
+    box-sizing:border-box;
+}
+
+html{
+    color-scheme:dark;
+}
+
+body{
+    margin:0;
+    min-height:100vh;
+    color:#fff;
+    font-family:Arial,system-ui,sans-serif;
+    background:
+    radial-gradient(circle at 15% 0%,#172554 0,#060a14 42%,#020308 100%);
+}
+
+.app{
+    width:min(1100px,94%);
+    margin:auto;
+    padding:28px 0 45px;
+}
+
+.header{
+    text-align:center;
+    margin-bottom:24px;
+}
+
+.logo{
+    width:82px;
+    height:82px;
+    margin:auto;
+    display:grid;
+    place-items:center;
+    border-radius:25px;
+    background:linear-gradient(135deg,#00d9ff,#7c3aed);
+    font-size:32px;
+    font-weight:900;
+    box-shadow:0 0 55px #00bfff55;
+}
+
+h1{
+    margin:15px 0 6px;
+    font-size:30px;
+}
+
+.sub{
+    color:#91a0b8;
+    font-size:13px;
+}
+
+.card{
+    background:#08101edb;
+    border:1px solid #263753;
+    border-radius:22px;
+    padding:20px;
+    margin-bottom:18px;
+    box-shadow:0 20px 70px #0009;
+    backdrop-filter:blur(18px);
+}
+
+.title{
+    font-size:17px;
+    font-weight:800;
+    margin-bottom:12px;
+}
+
+textarea,
+input{
+    width:100%;
+    background:#02050a;
+    color:#e7faff;
+    border:1px solid #293b58;
+    border-radius:14px;
+    outline:none;
+}
+
+textarea{
+    min-height:330px;
+    resize:vertical;
+    padding:16px;
+    font-family:monospace;
+    font-size:13px;
+    line-height:1.5;
+}
+
+input{
+    padding:14px;
+}
+
+textarea:focus,
+input:focus{
+    border-color:#00d9ff;
+    box-shadow:0 0 0 3px #00d9ff14;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+    margin-top:13px;
+}
+
+button{
+    padding:14px;
+    border-radius:14px;
+    border:1px solid #2b3d5b;
+    background:#111d30;
+    color:#fff;
+    font-weight:800;
+    cursor:pointer;
+    transition:.2s;
+}
+
+button:hover{
+    border-color:#00d9ff;
+    transform:translateY(-1px);
+}
+
+button:active{
+    transform:scale(.98);
+}
+
+button:disabled{
+    opacity:.55;
+    cursor:not-allowed;
+    transform:none;
+}
+
+.primary{
+    border:0;
+    background:linear-gradient(135deg,#008cff,#713cff);
+}
+
+.success{
+    border:0;
+    background:linear-gradient(135deg,#00a878,#007c67);
+}
+
+.danger{
+    background:#35131b;
+    border-color:#682633;
+}
+
+.status{
+    display:none;
+    padding:13px;
+    border-radius:13px;
+    margin-bottom:12px;
+    color:#70f3c9;
+    background:#06251c;
+    border:1px solid #17563f;
+    line-height:1.5;
+    font-size:13px;
+}
+
+.status.error{
+    color:#ff9eaa;
+    background:#2b0d13;
+    border-color:#6b2634;
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:10px;
+}
+
+.stat{
+    padding:15px;
+    border-radius:14px;
+    background:#050a12;
+    border:1px solid #23344c;
+}
+
+.stat small{
+    display:block;
+    color:#7f90a8;
+    margin-bottom:7px;
+}
+
+.stat strong{
+    font-size:17px;
+}
+
+.hash{
+    margin-top:16px;
+    color:#66e8ff;
+    font-family:monospace;
+    font-size:12px;
+    word-break:break-all;
+}
+
+.notice{
+    margin-top:12px;
+    padding:13px;
+    border-radius:13px;
+    background:#07101c;
+    border:1px solid #20314a;
+    color:#9cacbf;
+    font-size:12px;
+    line-height:1.6;
+}
+
+.security-list{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:8px;
+    margin-top:12px;
+}
+
+.security-item{
+    padding:12px;
+    border-radius:11px;
+    background:#050a12;
+    border:1px solid #20314a;
+    color:#a9b8cc;
+    font-size:12px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.security-item:hover{
+    border-color:#00d9ff;
+    transform:translateY(-1px);
+}
+
+.security-item b{
+    color:#66e8ff;
+}
+
+.security-detail{
+    margin-top:10px;
+    padding:10px;
+    border-radius:9px;
+    background:#081522;
+    border:1px solid #17364b;
+    color:#91dff0;
+    line-height:1.5;
+}
+
+.engine{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:12px;
+    margin-top:12px;
+    border-radius:13px;
+    background:#051b18;
+    border:1px solid #17634e;
+    color:#7af5d2;
+    font-size:12px;
+}
+
+.engine.offline{
+    background:#2b0d13;
+    border-color:#6b2634;
+    color:#ff9eaa;
+}
+
+.dot{
+    width:9px;
+    height:9px;
+    border-radius:50%;
+    background:#20e6ad;
+    box-shadow:0 0 12px #20e6ad;
+    flex:none;
+}
+
+.dot.off{
+    background:#ff586b;
+    box-shadow:0 0 12px #ff586b;
+}
+
+.footer{
+    text-align:center;
+    color:#66758d;
+    font-size:12px;
+    margin-top:16px;
+}
+
+.progress{
+    display:none;
+    height:6px;
+    margin-top:12px;
+    border-radius:20px;
+    background:#111d30;
+    overflow:hidden;
+}
+
+.progress-bar{
+    width:0%;
+    height:100%;
+    background:linear-gradient(90deg,#00d9ff,#713cff);
+    transition:.2s;
+}
+
+@media(max-width:700px){
+
+    .grid,
+    .stats,
+    .security-list{
+        grid-template-columns:1fr;
+    }
+
+    h1{
+        font-size:24px;
+    }
+
+    .app{
+        width:94%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+<div class="header">
+
+    <div class="logo">R</div>
+
+    <h1>REDWAN HTML PROTECTOR V9</h1>
+
+    <div class="sub">
+        AES-256-GCM • PBKDF2 • Authenticated Encryption
+    </div>
+
+</div>
+
+
+<!-- SECURITY ENGINE -->
+
+<div class="card">
+
+<div class="title">🛡️ High Security Engine</div>
+
+<div class="security-list">
+
+<div class="security-item">
+<b>✓ AES-256-GCM</b><br>
+Authenticated encryption
+</div>
+
+<div class="security-item">
+<b>✓ PBKDF2-SHA-256</b><br>
+Password key derivation
+</div>
+
+<div class="security-item">
+<b>✓ 600,000 Iterations</b><br>
+Password stretching
+</div>
+
+<div class="security-item">
+<b>✓ Random Salt + IV</b><br>
+Fresh values per vault
+</div>
+
+<div class="security-item">
+<b>✓ Tamper Detection</b><br>
+GCM authentication
+</div>
+
+<div class="security-item">
+<b>✓ UTF-8 Safe</b><br>
+Unicode compatible
+</div>
+
+</div>
+
+
+<div id="engineStatus" class="engine">
+
+<span id="engineDot" class="dot"></span>
+
+<span id="engineText">
+Checking Web Crypto...
+</span>
+
+</div>
+
+
+<div class="notice">
+⚠️ Password হারিয়ে গেলে encrypted HTML recover করার কোনো backdoor নেই।
+</div>
+
+</div>
+
+
+<!-- PASSWORD -->
+
+<div class="card">
+
+<div class="title">🔑 Master Password</div>
+
+<input
+id="password"
+type="password"
+autocomplete="new-password"
+minlength="16"
+placeholder="কমপক্ষে 16 character password..."
+>
+
+<div class="notice">
+
+কমপক্ষে 16 character password ব্যবহার করুন।
+
+বড়/ছোট অক্ষর, সংখ্যা ও symbol ব্যবহার করা ভালো।
+
+</div>
+
+</div>
+
+
+<!-- INPUT -->
+
+<div class="card">
+
+<div class="title">📥 Original HTML</div>
+
+<textarea
+id="input"
+spellcheck="false"
+placeholder="এখানে সম্পূর্ণ HTML code paste করুন..."
+></textarea>
+
+<div class="grid">
+
+<button onclick="openFile()">
+📂 Upload HTML
+</button>
+
+<button
+id="protectButton"
+class="primary"
+onclick="handleProtectCode()">
+
+⚡ PROTECT CODE
+
+</button>
+
+</div>
+
+<input
+id="file"
+type="file"
+accept=".html,.htm,text/html"
+hidden
+onchange="readFile(event)"
+>
+
+<div class="progress" id="progress">
+
+<div class="progress-bar"
+id="progressBar"></div>
+
+</div>
+
+</div>
+
+
+<!-- OUTPUT -->
+
+<div class="card">
+
+<div class="title">🔐 Protected HTML</div>
+
+<div id="status" class="status"></div>
+
+<textarea
+id="output"
+readonly
+spellcheck="false"
+placeholder="Protection complete হলে এখানে protected HTML আসবে..."
+></textarea>
+
+<div class="grid">
+
+<button onclick="copyCode()">
+📋 COPY CODE
+</button>
+
+<button
+class="success"
+onclick="downloadCode()">
+
+⬇️ DOWNLOAD HTML
+
+</button>
+
+<button
+class="danger"
+onclick="clearAll()">
+
+🗑️ CLEAR
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- REPORT -->
+
+<div class="card">
+
+<div class="title">📊 Security Report</div>
+
+<div class="stats">
+
+<div class="stat">
+<small>Original</small>
+<strong id="originalSize">0 KB</strong>
+</div>
+
+<div class="stat">
+<small>Protected</small>
+<strong id="protectedSize">0 KB</strong>
+</div>
+
+<div class="stat">
+<small>Algorithm</small>
+<strong>AES-256-GCM</strong>
+</div>
+
+<div class="stat">
+<small>Status</small>
+<strong id="state">Waiting</strong>
+</div>
+
+</div>
+
+
+<div class="hash">
+
+SHA-256 Fingerprint:
+
+<div id="hash">
+Not generated
+</div>
+
+</div>
+
+</div>
+
+
+<div class="footer">
+REDWAN HTML PROTECTOR V9
+</div>
+
+</div>
+
+
+<script>
+"use strict";
+
+
+/* =====================================================
+   CONFIG
+===================================================== */
+
+const SECURITY = Object.freeze({
+
+    VERSION:"REDWAN-V9",
+
+    ALGORITHM:"AES-GCM",
+
+    KDF:"PBKDF2",
+
+    HASH:"SHA-256",
+
+    ITERATIONS:600000,
+
+    KEY_LENGTH:256,
+
+    SALT_LENGTH:32,
+
+    IV_LENGTH:12,
+
+    MIN_PASSWORD_LENGTH:16
+
+});
+
+
+let protectedHTML = "";
+
+
+/* =====================================================
+   CRYPTO DETECTION
+===================================================== */
+
+function getCrypto(){
+
+    if(
+        window.crypto &&
+        window.crypto.subtle &&
+        window.crypto.getRandomValues
+    ){
+        return window.crypto;
+    }
+
+    return null;
+}
+
+
+function cryptoAvailable(){
+
+    return getCrypto() !== null;
+
+}
+
+
+function updateEngine(){
+
+    const dot =
+        document.getElementById("engineDot");
+
+    const text =
+        document.getElementById("engineText");
+
+    const engine =
+        document.getElementById("engineStatus");
+
+
+    if(!dot || !text || !engine)
+        return;
+
+
+    if(cryptoAvailable()){
+
+        dot.classList.remove("off");
+
+        engine.classList.remove("offline");
+
+        text.textContent =
+            "✓ Web Crypto Engine Ready";
+
+    }else{
+
+        dot.classList.add("off");
+
+        engine.classList.add("offline");
+
+        text.textContent =
+            "✕ Web Crypto API unavailable";
+
+    }
+}
+
+
+/* =====================================================
+   RANDOM
+===================================================== */
+
+function secureRandomBytes(length){
+
+    const c = getCrypto();
+
+    if(!c){
+
+        throw new Error(
+            "এই browser-এ Web Crypto API পাওয়া যাচ্ছে না। Chrome/Edge/Firefox/Opera-এর পূর্ণ browser ব্যবহার করুন।"
+        );
+    }
+
+
+    const bytes =
+        new Uint8Array(length);
+
+    c.getRandomValues(bytes);
+
+    return bytes;
+}
+
+
+/* =====================================================
+   BASE64
+===================================================== */
+
+function bytesToBase64(bytes){
+
+    let binary = "";
+
+    const chunk = 0x8000;
+
+
+    for(
+        let i=0;
+        i<bytes.length;
+        i+=chunk
+    ){
+
+        binary +=
+            String.fromCharCode.apply(
+                null,
+                bytes.subarray(
+                    i,
+                    Math.min(
+                        i+chunk,
+                        bytes.length
+                    )
+                )
+            );
+
+    }
+
+
+    return btoa(binary);
+}
+
+
+function base64ToBytes(base64){
+
+    const binary =
+        atob(base64);
+
+    const bytes =
+        new Uint8Array(
+            binary.length
+        );
+
+
+    for(
+        let i=0;
+        i<binary.length;
+        i++
+    ){
+
+        bytes[i] =
+            binary.charCodeAt(i);
+
+    }
+
+
+    return bytes;
+}
+
+
+/* =====================================================
+   PASSWORD
+===================================================== */
+
+function validatePassword(password){
+
+    if(
+        !password ||
+        password.length <
+        SECURITY.MIN_PASSWORD_LENGTH
+    ){
+
+        throw new Error(
+            "Password অবশ্যই কমপক্ষে 16 characters হতে হবে।"
+        );
+    }
+
+}
+
+
+/* =====================================================
+   PBKDF2
+===================================================== */
+
+async function deriveKey(
+    password,
+    salt,
+    usage
+){
+
+    const c = getCrypto();
+
+    if(!c){
+
+        throw new Error(
+            "Web Crypto API unavailable."
+        );
+
+    }
+
+
+    const passwordKey =
+        await c.subtle.importKey(
+
+            "raw",
+
+            new TextEncoder()
+            .encode(password),
+
+            {
+                name:"PBKDF2"
+            },
+
+            false,
+
+            ["deriveKey"]
+
+        );
+
+
+    return c.subtle.deriveKey(
+
+        {
+            name:"PBKDF2",
+
+            salt:salt,
+
+            iterations:
+                SECURITY.ITERATIONS,
+
+            hash:"SHA-256"
+        },
+
+        passwordKey,
+
+        {
+            name:"AES-GCM",
+
+            length:256
+        },
+
+        false,
+
+        [usage]
+
+    );
+
+}
+
+
+/* =====================================================
+   SHA256
+===================================================== */
+
+async function sha256(text){
+
+    const c = getCrypto();
+
+    if(!c){
+
+        throw new Error(
+            "Web Crypto API unavailable."
+        );
+
+    }
+
+
+    const data =
+        new TextEncoder()
+        .encode(text);
+
+
+    const result =
+        await c.subtle.digest(
+            "SHA-256",
+            data
+        );
+
+
+    return Array.from(
+        new Uint8Array(result)
+    )
+    .map(
+        function(byte){
+
+            return byte
+            .toString(16)
+            .padStart(2,"0");
+
+        }
+    )
+    .join("")
+    .toUpperCase();
+
+}
+
+
+/* =====================================================
+   ENCRYPT
+===================================================== */
+
+async function encryptHTML(
+    html,
+    password
+){
+
+    const c = getCrypto();
+
+
+    if(!c){
+
+        throw new Error(
+            "Secure Web Crypto API unavailable. Chrome/Edge/Firefox/Opera Full Browser ব্যবহার করুন।"
+        );
+
+    }
+
+
+    if(!html.trim()){
+
+        throw new Error(
+            "HTML code empty."
+        );
+
+    }
+
+
+    validatePassword(password);
+
+
+    const encoder =
+        new TextEncoder();
+
+
+    const salt =
+        secureRandomBytes(
+            SECURITY.SALT_LENGTH
+        );
+
+
+    const iv =
+        secureRandomBytes(
+            SECURITY.IV_LENGTH
+        );
+
+
+    const key =
+        await deriveKey(
+            password,
+            salt,
+            "encrypt"
+        );
+
+
+    const metadata = {
+
+        version:
+            SECURITY.VERSION,
+
+        algorithm:
+            SECURITY.ALGORITHM,
+
+        kdf:
+            SECURITY.KDF,
+
+        hash:
+            SECURITY.HASH,
+
+        iterations:
+            SECURITY.ITERATIONS
+
+    };
+
+
+    const aad =
+        encoder.encode(
+            JSON.stringify(metadata)
+        );
+
+
+    const encrypted =
+        await c.subtle.encrypt(
+
+            {
+                name:"AES-GCM",
+
+                iv:iv,
+
+                additionalData:aad,
+
+                tagLength:128
+            },
+
+            key,
+
+            encoder.encode(html)
+
+        );
+
+
+    const fingerprint =
+        await sha256(html);
+
+
+    return {
+
+        version:
+            SECURITY.VERSION,
+
+        algorithm:
+            SECURITY.ALGORITHM,
+
+        kdf:
+            SECURITY.KDF,
+
+        hash:
+            SECURITY.HASH,
+
+        iterations:
+            SECURITY.ITERATIONS,
+
+        salt:
+            bytesToBase64(salt),
+
+        iv:
+            bytesToBase64(iv),
+
+        aad:
+            bytesToBase64(aad),
+
+        ciphertext:
+            bytesToBase64(
+                new Uint8Array(encrypted)
+            ),
+
+        fingerprint:
+            fingerprint
+
+    };
+
+}
+
+
+/* =====================================================
+   CREATE VAULT
+===================================================== */
+
+function createVault(data){
+
+    const json =
+        JSON.stringify(data);
+
+
+    const encoded =
+        bytesToBase64(
+            new TextEncoder()
+            .encode(json)
+        );
+
+
+    /*
+      Important:
+      Generated HTML does not directly contain the
+      original HTML source.
+    */
+
+
+    return `<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width,initial-scale=1">
+
+<title>REDWAN SECURE VAULT V9</title>
+
+<style>
+
+*{
+box-sizing:border-box;
+}
+
+html{
+color-scheme:dark;
+}
+
+body{
+
+margin:0;
+
+min-height:100vh;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-family:Arial,system-ui,sans-serif;
+
+background:
+radial-gradient(
+circle at 20% 0%,
+#172554,
+#060a14 50%,
+#020308
+);
+
+color:#fff;
+
+}
+
+.box{
+
+width:min(420px,92%);
+
+padding:30px;
+
+border-radius:24px;
+
+background:#08101ef0;
+
+border:1px solid #263753;
+
+box-shadow:
+0 25px 80px #000b;
+
+}
+
+.logo{
+
+width:68px;
+
+height:68px;
+
+margin:auto;
+
+display:grid;
+
+place-items:center;
+
+border-radius:20px;
+
+background:
+linear-gradient(
+135deg,
+#00d9ff,
+#7c3aed
+);
+
+font-size:28px;
+
+font-weight:900;
+
+}
+
+h2{
+
+text-align:center;
+
+margin:17px 0 7px;
+
+}
+
+.sub{
+
+text-align:center;
+
+color:#8291a8;
+
+font-size:12px;
+
+}
+
+input{
+
+width:100%;
+
+padding:14px;
+
+margin-top:20px;
+
+border-radius:13px;
+
+border:1px solid #2a3b56;
+
+background:#030711;
+
+color:white;
+
+outline:none;
+
+}
+
+button{
+
+width:100%;
+
+margin-top:12px;
+
+padding:14px;
+
+border:0;
+
+border-radius:13px;
+
+background:
+linear-gradient(
+135deg,
+#008cff,
+#713cff
+);
+
+color:white;
+
+font-weight:bold;
+
+cursor:pointer;
+
+}
+
+button:disabled{
+
+opacity:.55;
+
+cursor:not-allowed;
+
+}
+
+#message{
+
+min-height:20px;
+
+margin-top:13px;
+
+text-align:center;
+
+color:#ff8797;
+
+font-size:12px;
+
+line-height:1.5;
+
+}
+
+.badge{
+
+margin-top:18px;
+
+padding:10px;
+
+border-radius:10px;
+
+background:#050a12;
+
+border:1px solid #23344c;
+
+color:#66e8ff;
+
+text-align:center;
+
+font-size:10px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<div class="logo">
+R
+</div>
+
+<h2>
+🔐 SECURE ACCESS
+</h2>
+
+<div class="sub">
+REDWAN HTML PROTECTOR V9
+</div>
+
+<input
+id="password"
+type="password"
+autocomplete="off"
+placeholder="Enter Master Password"
+>
+
+<button id="unlock">
+🔓 UNLOCK
+</button>
+
+<div id="message"></div>
+
+<div class="badge">
+AES-256-GCM • PBKDF2 • 600K • AUTHENTICATED
+</div>
+
+</div>
+
+
+<script>
+
+"use strict";
+
+
+const PAYLOAD =
+"${encoded}";
+
+
+function getCrypto(){
+
+    if(
+        window.crypto &&
+        window.crypto.subtle
+    ){
+
+        return window.crypto;
+
+    }
+
+    return null;
+
+}
+
+
+function b64bytes(value){
+
+    const binary =
+        atob(value);
+
+    const bytes =
+        new Uint8Array(
+            binary.length
+        );
+
+
+    for(
+        let i=0;
+        i<binary.length;
+        i++
+    ){
+
+        bytes[i] =
+            binary.charCodeAt(i);
+
+    }
+
+
+    return bytes;
+
+}
+
+
+function readVault(){
+
+    const bytes =
+        b64bytes(PAYLOAD);
+
+
+    const text =
+        new TextDecoder(
+            "utf-8"
+        ).decode(bytes);
+
+
+    return JSON.parse(text);
+
+}
+
+
+async function derive(
+    password,
+    salt
+){
+
+    const c =
+        getCrypto();
+
+
+    const base =
+        await c.subtle.importKey(
+
+            "raw",
+
+            new TextEncoder()
+            .encode(password),
+
+            {
+                name:"PBKDF2"
+            },
+
+            false,
+
+            ["deriveKey"]
+
+        );
+
+
+    return c.subtle.deriveKey(
+
+        {
+            name:"PBKDF2",
+
+            salt:salt,
+
+            iterations:600000,
+
+            hash:"SHA-256"
+
+        },
+
+        base,
+
+        {
+            name:"AES-GCM",
+
+            length:256
+
+        },
+
+        false,
+
+        ["decrypt"]
+
+    );
+
+}
+
+
+async function unlockVault(){
+
+    const message =
+        document.getElementById(
+            "message"
+        );
+
+
+    const button =
+        document.getElementById(
+            "unlock"
+        );
+
+
+    const password =
+        document.getElementById(
+            "password"
+        ).value;
+
+
+    message.textContent = "";
+
+
+    if(
+        password.length < 16
+    ){
+
+        message.textContent =
+            "❌ Password must contain at least 16 characters.";
+
+        return;
+
+    }
+
+
+    const c = getCrypto();
+
+
+    if(!c){
+
+        message.textContent =
+            "❌ এই browser Web Crypto support করে না। Chrome/Edge/Firefox/Opera Full Browser ব্যবহার করুন।";
+
+        return;
+
+    }
+
+
+    button.disabled = true;
+
+    button.textContent =
+        "⏳ VERIFYING...";
+
+
+    try{
+
+        const vault =
+            readVault();
+
+
+        if(
+            vault.version !==
+            "REDWAN-V9"
+        ){
+
+            throw new Error(
+                "Invalid vault"
+            );
+
+        }
+
+
+        const salt =
+            b64bytes(
+                vault.salt
+            );
+
+
+        const iv =
+            b64bytes(
+                vault.iv
+            );
+
+
+        const aad =
+            b64bytes(
+                vault.aad
+            );
+
+
+        const ciphertext =
+            b64bytes(
+                vault.ciphertext
+            );
+
+
+        const key =
+            await derive(
+                password,
+                salt
+            );
+
+
+        const decrypted =
+            await c.subtle.decrypt(
+
+                {
+                    name:"AES-GCM",
+
+                    iv:iv,
+
+                    additionalData:aad,
+
+                    tagLength:128
+
+                },
+
+                key,
+
+                ciphertext
+
+            );
+
+
+        const html =
+            new TextDecoder(
+                "utf-8",
+                {
+                    fatal:true
+                }
+            ).decode(
+                decrypted
+            );
+
+
+        if(!html.trim()){
+
+            throw new Error(
+                "Empty document"
+            );
+
+        }
+
+
+        /*
+         * Authenticated plaintext is rendered.
+         */
+
+        document.open();
+
+        document.write(html);
+
+        document.close();
+
+
+    }
+    catch(error){
+
+        console.error(error);
+
+        message.textContent =
+            "❌ Wrong password অথবা protected file পরিবর্তন করা হয়েছে।";
+
+        button.disabled = false;
+
+        button.textContent =
+            "🔓 UNLOCK";
+
+    }
+
+}
+
+
+document
+.getElementById("unlock")
+.addEventListener(
+    "click",
+    unlockVault
+);
+
+
+document
+.getElementById("password")
+.addEventListener(
+    "keydown",
+    function(event){
+
+        if(event.key === "Enter"){
+
+            unlockVault();
+
+        }
+
+    }
+);
+
+<\/script>
+
+</body>
+
+</html>`;
+
+}
+
+
+/* =====================================================
+   FILE
+===================================================== */
+
+function openFile(){
+
+    document
+    .getElementById("file")
+    .click();
+
+}
+
+
+function readFile(event){
+
+    const file =
+        event.target.files[0];
+
+
+    if(!file)
+        return;
+
+
+    const reader =
+        new FileReader();
+
+
+    reader.onload =
+    function(){
+
+        document
+        .getElementById("input")
+        .value =
+        reader.result;
+
+
+        showSuccess(
+            "✓ HTML file successfully loaded."
+        );
+
+    };
+
+
+    reader.onerror =
+    function(){
+
+        showError(
+            "HTML file পড়া যায়নি।"
+        );
+
+    };
+
+
+    reader.readAsText(file);
+
+}
+
+
+/* =====================================================
+   PROTECT BUTTON
+===================================================== */
+
+async function handleProtectCode(){
+
+    clearStatus();
+
+
+    const input =
+        document
+        .getElementById("input")
+        .value;
+
+
+    const password =
+        document
+        .getElementById("password")
+        .value;
+
+
+    const button =
+        document
+        .getElementById("protectButton");
+
+
+    const state =
+        document
+        .getElementById("state");
+
+
+    /*
+      IMPORTANT:
+      Do not use isSecureContext here.
+      file:// pages can still have WebCrypto
+      depending on browser.
+    */
+
+
+    if(!cryptoAvailable()){
+
+        showError(
+            "এই browser Web Crypto API support করছে না। Chrome/Edge/Firefox/Opera Full Browser দিয়ে চেষ্টা করুন।"
+        );
+
+        state.textContent =
+            "Unsupported";
+
+        return;
+
+    }
+
+
+    if(!input.trim()){
+
+        showError(
+            "প্রথমে Original HTML box-এ code দিন।"
+        );
+
+        return;
+
+    }
+
+
+    if(
+        password.length <
+        SECURITY.MIN_PASSWORD_LENGTH
+    ){
+
+        showError(
+            "কমপক্ষে 16 character password দিন।"
+        );
+
+        return;
+
+    }
+
+
+    button.disabled = true;
+
+    button.textContent =
+        "⏳ ENCRYPTING...";
+
+
+    showProgress();
+
+
+    try{
+
+        /*
+          Small delay makes the UI update
+          before expensive PBKDF2 work.
+        */
+
+        await new Promise(
+            function(resolve){
+
+                setTimeout(
+                    resolve,
+                    30
+                );
+
+            }
+        );
+
+
+        setProgress(20);
+
+
+        const encrypted =
+            await encryptHTML(
+                input,
+                password
+            );
+
+
+        setProgress(70);
+
+
+        protectedHTML =
+            createVault(
+                encrypted
+            );
+
+
+        /*
+          THIS IS THE IMPORTANT PART:
+          Output textarea is always updated
+          after successful encryption.
+        */
+
+        document
+        .getElementById("output")
+        .value =
+        protectedHTML;
+
+
+        document
+        .getElementById("originalSize")
+        .textContent =
+        formatSize(
+            new Blob([
+                input
+            ]).size
+        );
+
+
+        document
+        .getElementById("protectedSize")
+        .textContent =
+        formatSize(
+            new Blob([
+                protectedHTML
+            ]).size
+        );
+
+
+        document
+        .getElementById("hash")
+        .textContent =
+        encrypted.fingerprint;
+
+
+        state.textContent =
+            "PROTECTED";
+
+
+        setProgress(100);
+
+
+        showSuccess(
+            "✓ Protection complete — নিচের Protected HTML box-এ সম্পূর্ণ code তৈরি হয়েছে।"
+        );
+
+
+        /*
+          Automatically move user to output.
+        */
+
+        setTimeout(
+            function(){
+
+                document
+                .getElementById("output")
+                .scrollIntoView({
+                    behavior:"smooth",
+                    block:"center"
+                });
+
+            },
+            150
+        );
+
+
+    }
+    catch(error){
+
+        console.error(
+            "Protection error:",
+            error
+        );
+
+
+        state.textContent =
+            "ERROR";
+
+
+        showError(
+            error && error.message
+            ? error.message
+            : "Protection failed."
+        );
+
+    }
+    finally{
+
+        button.disabled = false;
+
+        button.textContent =
+            "⚡ PROTECT CODE";
+
+
+        setTimeout(
+            hideProgress,
+            700
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   COPY
+===================================================== */
+
+async function copyCode(){
+
+    const output =
+        document
+        .getElementById("output");
+
+
+    if(!output.value){
+
+        showError(
+            "আগে PROTECT CODE চাপুন।"
+        );
+
+        return;
+
+    }
+
+
+    try{
+
+        if(
+            navigator.clipboard &&
+            window.isSecureContext
+        ){
+
+            await navigator.clipboard
+            .writeText(
+                output.value
+            );
+
+        }else{
+
+            output.focus();
+
+            output.select();
+
+            output.setSelectionRange(
+                0,
+                output.value.length
+            );
+
+
+            const success =
+                document.execCommand(
+                    "copy"
+                );
+
+
+            if(!success){
+
+                throw new Error(
+                    "copy failed"
+                );
+
+            }
+
+        }
+
+
+        showSuccess(
+            "✓ Protected code copied."
+        );
+
+    }
+    catch(error){
+
+        showError(
+            "Copy করা যায়নি। Protected HTML box থেকে manually select করুন।"
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   DOWNLOAD
+===================================================== */
+
+function downloadCode(){
+
+    const output =
+        document
+        .getElementById("output")
+        .value;
+
+
+    if(!output){
+
+        showError(
+            "আগে PROTECT CODE চাপুন।"
+        );
+
+        return;
+
+    }
+
+
+    try{
+
+        const blob =
+            new Blob(
+                [output],
+                {
+                    type:
+                    "text/html;charset=utf-8"
+                }
+            );
+
+
+        const url =
+            URL.createObjectURL(blob);
+
+
+        const link =
+            document.createElement("a");
+
+
+        link.href = url;
+
+        link.download =
+            "REDWAN-V9-PROTECTED.html";
+
+
+        link.style.display =
+            "none";
+
+
+        document.body.appendChild(
+            link
+        );
+
+
+        link.click();
+
+
+        link.remove();
+
+
+        setTimeout(
+            function(){
+
+                URL.revokeObjectURL(
+                    url
+                );
+
+            },
+            1000
+        );
+
+
+        showSuccess(
+            "✓ Protected HTML download শুরু হয়েছে।"
+        );
+
+    }
+    catch(error){
+
+        showError(
+            "Download করা যায়নি।"
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   CLEAR
+===================================================== */
+
+function clearAll(){
+
+    protectedHTML = "";
+
+
+    document
+    .getElementById("input")
+    .value = "";
+
+
+    document
+    .getElementById("output")
+    .value = "";
+
+
+    document
+    .getElementById("password")
+    .value = "";
+
+
+    document
+    .getElementById("file")
+    .value = "";
+
+
+    document
+    .getElementById("originalSize")
+    .textContent =
+    "0 KB";
+
+
+    document
+    .getElementById("protectedSize")
+    .textContent =
+    "0 KB";
+
+
+    document
+    .getElementById("state")
+    .textContent =
+    "Waiting";
+
+
+    document
+    .getElementById("hash")
+    .textContent =
+    "Not generated";
+
+
+    clearStatus();
+
+}
+
+
+/* =====================================================
+   SIZE
+===================================================== */
+
+function formatSize(bytes){
+
+    if(bytes < 1024){
+
+        return bytes + " B";
+
+    }
+
+
+    if(
+        bytes <
+        1024 * 1024
+    ){
+
+        return (
+            bytes / 1024
+        ).toFixed(2) + " KB";
+
+    }
+
+
+    return (
+        bytes /
+        (1024 * 1024)
+    ).toFixed(2) + " MB";
+
+}
+
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+function clearStatus(){
+
+    const box =
+        document
+        .getElementById("status");
+
+
+    box.style.display =
+        "none";
+
+
+    box.classList.remove(
+        "error"
+    );
+
+}
+
+
+function showSuccess(message){
+
+    const box =
+        document
+        .getElementById("status");
+
+
+    box.classList.remove(
+        "error"
+    );
+
+
+    box.textContent =
+        message;
+
+
+    box.style.display =
+        "block";
+
+}
+
+
+function showError(message){
+
+    const box =
+        document
+        .getElementById("status");
+
+
+    box.classList.add(
+        "error"
+    );
+
+
+    box.textContent =
+        "✕ " + message;
+
+
+    box.style.display =
+        "block";
+
+}
+
+
+/* =====================================================
+   PROGRESS
+===================================================== */
+
+function showProgress(){
+
+    document
+    .getElementById("progress")
+    .style.display =
+    "block";
+
+
+    setProgress(5);
+
+}
+
+
+function setProgress(value){
+
+    document
+    .getElementById("progressBar")
+    .style.width =
+    value + "%";
+
+}
+
+
+function hideProgress(){
+
+    document
+    .getElementById("progress")
+    .style.display =
+    "none";
+
+
+    setProgress(0);
+
+}
+
+
+/* =====================================================
+   SECURITY DETAILS
+===================================================== */
+
+const SECURITY_DETAILS = {
+
+    "✓ AES-256-GCM":
+    "AES-256-GCM authenticated encryption ব্যবহার করা হচ্ছে। ভুল password অথবা encrypted data পরিবর্তন হলে authentication ব্যর্থ হবে।",
+
+    "✓ PBKDF2-SHA-256":
+    "Master password থেকে AES encryption key তৈরি করতে PBKDF2-SHA-256 ব্যবহার করা হচ্ছে।",
+
+    "✓ 600,000 Iterations":
+    "PBKDF2 key derivation-এ 600,000 iterations ব্যবহার করা হচ্ছে।",
+
+    "✓ Random Salt + IV":
+    "প্রতিটি protection operation-এর জন্য নতুন random salt এবং IV তৈরি করা হয়।",
+
+    "✓ Tamper Detection":
+    "AES-GCM authentication tag encrypted content পরিবর্তন শনাক্ত করতে সাহায্য করে।",
+
+    "✓ UTF-8 Safe":
+    "TextEncoder/TextDecoder ব্যবহার করার কারণে বাংলা, English এবং Unicode HTML content ঠিকভাবে রাখা যায়।"
+
+};
+
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function(){
+
+        updateEngine();
+
+
+        const items =
+            document.querySelectorAll(
+                ".security-item"
+            );
+
+
+        items.forEach(
+            function(item){
+
+                item.addEventListener(
+                    "click",
+                    function(){
+
+                        const first =
+                            item.querySelector("b");
+
+
+                        if(!first)
+                            return;
+
+
+                        const title =
+                            first.textContent
+                            .trim();
+
+
+                        const old =
+                            item.querySelector(
+                                ".security-detail"
+                            );
+
+
+                        if(old){
+
+                            old.remove();
+
+                            return;
+
+                        }
+
+
+                        const detail =
+                            document.createElement(
+                                "div"
+                            );
+
+
+                        detail.className =
+                            "security-detail";
+
+
+                        detail.textContent =
+                            SECURITY_DETAILS[title] ||
+                            "Security information unavailable.";
+
+
+                        item.appendChild(
+                            detail
+                        );
+
+                    }
+                );
+
+            }
+        );
+
+    }
+);
+
+</script>
+
+</body>
+</html>
