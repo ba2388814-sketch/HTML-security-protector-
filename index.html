@@ -3,184 +3,3763 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>REDWAN HTML PROTECTOR V9 - FIXED</title>
+<title>REDWAN HTML PROTECTOR V18 FIXED</title>
+
 <style>
-*{box-sizing:border-box;}
-html{color-scheme:dark;}
-body{margin:0;min-height:100vh;color:#fff;font-family:Arial,system-ui,sans-serif;background:radial-gradient(circle at 15% 0%,#172554 0,#060a14 42%,#020308 100%);}
-.app{width:min(1100px,94%);margin:auto;padding:28px 0 45px;}
-.header{text-align:center;margin-bottom:24px;}
-.logo{width:82px;height:82px;margin:auto;display:grid;place-items:center;border-radius:25px;background:linear-gradient(135deg,#00d9ff,#7c3aed);font-size:32px;font-weight:900;box-shadow:0 0 55px #00bfff55;}
-h1{margin:15px 0 6px;font-size:30px;}
-.sub{color:#91a0b8;font-size:13px;}
-.card{background:#08101edb;border:1px solid #263753;border-radius:22px;padding:20px;margin-bottom:18px;box-shadow:0 20px 70px #0009;backdrop-filter:blur(18px);}
-.title{font-size:17px;font-weight:800;margin-bottom:12px;}
-textarea,input{width:100%;background:#02050a;color:#e7faff;border:1px solid #293b58;border-radius:14px;outline:none;}
-textarea{min-height:330px;resize:vertical;padding:16px;font-family:monospace;font-size:13px;line-height:1.5;}
-input{padding:14px;}
-textarea:focus,input:focus{border-color:#00d9ff;box-shadow:0 0 0 3px #00d9ff14;}
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:13px;}
-button{padding:14px;border-radius:14px;border:1px solid #2b3d5b;background:#111d30;color:#fff;font-weight:800;cursor:pointer;transition:.2s;}
-button:hover{border-color:#00d9ff;transform:translateY(-1px);}
-button:active{transform:scale(.98);}
-button:disabled{opacity:.55;cursor:not-allowed;transform:none;}
-.primary{border:0;background:linear-gradient(135deg,#008cff,#713cff);}
-.success{border:0;background:linear-gradient(135deg,#00a878,#007c67);}
-.danger{background:#35131b;border-color:#682633;}
-.status{display:none;padding:13px;border-radius:13px;margin-bottom:12px;color:#70f3c9;background:#06251c;border:1px solid #17563f;line-height:1.5;font-size:13px;}
-.status.error{color:#ff9eaa;background:#2b0d13;border-color:#6b2634;}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
-.stat{padding:15px;border-radius:14px;background:#050a12;border:1px solid #23344c;}
-.stat small{display:block;color:#7f90a8;margin-bottom:7px;}
-.stat strong{font-size:17px;}
-.hash{margin-top:16px;color:#66e8ff;font-family:monospace;font-size:12px;word-break:break-all;}
-.notice{margin-top:12px;padding:13px;border-radius:13px;background:#07101c;border:1px solid #20314a;color:#9cacbf;font-size:12px;line-height:1.6;}
-.security-list{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:12px;}
-.security-item{padding:12px;border-radius:11px;background:#050a12;border:1px solid #20314a;color:#a9b8cc;font-size:12px;cursor:pointer;transition:.2s;}
-.security-item:hover{border-color:#00d9ff;transform:translateY(-1px);}
-.security-item b{color:#66e8ff;}
-.security-detail{margin-top:10px;padding:10px;border-radius:9px;background:#081522;border:1px solid #17364b;color:#91dff0;line-height:1.5;}
-.engine{display:flex;align-items:center;gap:10px;padding:12px;margin-top:12px;border-radius:13px;background:#051b18;border:1px solid #17634e;color:#7af5d2;font-size:12px;}
-.engine.offline{background:#2b0d13;border-color:#6b2634;color:#ff9eaa;}
-.dot{width:9px;height:9px;border-radius:50%;background:#20e6ad;box-shadow:0 0 12px #20e6ad;flex:none;}
-.dot.off{background:#ff586b;box-shadow:0 0 12px #ff586b;}
-.footer{text-align:center;color:#66758d;font-size:12px;margin-top:16px;}
-.progress{display:none;height:6px;margin-top:12px;border-radius:20px;background:#111d30;overflow:hidden;}
-.progress-bar{width:0%;height:100%;background:linear-gradient(90deg,#00d9ff,#713cff);transition:.2s;}
-@media(max-width:700px){.grid,.stats,.security-list{grid-template-columns:1fr;}h1{font-size:24px;}.app{width:94%;}}
+*{box-sizing:border-box}
+
+:root{
+  --bg:#05070b;
+  --panel:#10151e;
+  --line:rgba(255,255,255,.09);
+  --text:#f5f7fb;
+  --muted:#929baa;
+  --red:#ff3151;
+  --orange:#ff8500;
+  --green:#00d084;
+  --blue:#397cff;
+}
+
+html{color-scheme:dark}
+
+body{
+  margin:0;
+  min-height:100vh;
+  padding:12px;
+  font-family:Arial,system-ui,sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(circle at 10% 0%,rgba(255,49,81,.18),transparent 30%),
+    radial-gradient(circle at 90% 5%,rgba(255,133,0,.13),transparent 28%),
+    radial-gradient(circle at 50% 100%,rgba(57,124,255,.10),transparent 35%),
+    var(--bg);
+}
+
+.app{
+  width:min(1100px,100%);
+  margin:auto;
+}
+
+.header{
+  text-align:center;
+  padding:22px 8px 25px;
+}
+
+.logo{
+  width:78px;
+  height:78px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:24px;
+  background:linear-gradient(135deg,var(--red),var(--orange));
+  box-shadow:0 0 35px rgba(255,49,81,.3);
+  font-size:35px;
+  font-weight:900;
+}
+
+h1{
+  margin:15px 0 5px;
+  font-size:clamp(25px,6vw,43px);
+}
+
+.subtitle{
+  color:var(--muted);
+  font-size:12px;
+}
+
+.badges{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:7px;
+  margin-top:13px;
+}
+
+.badge{
+  padding:7px 10px;
+  border-radius:999px;
+  background:rgba(255,255,255,.04);
+  border:1px solid var(--line);
+  font-size:10px;
+  font-weight:800;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+}
+
+.full{
+  grid-column:1/-1;
+}
+
+.card{
+  padding:18px;
+  border:1px solid var(--line);
+  border-radius:21px;
+  background:
+    linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.01)),
+    var(--panel);
+  box-shadow:0 18px 55px rgba(0,0,0,.28);
+}
+
+.title{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:13px;
+  font-weight:900;
+  font-size:14px;
+}
+
+.title span{
+  width:34px;
+  height:34px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:11px;
+  background:rgba(255,49,81,.12);
+  border:1px solid rgba(255,49,81,.2);
+}
+
+label{
+  display:block;
+  margin-bottom:7px;
+  font-size:11px;
+  font-weight:800;
+  color:#ccd2dc;
+}
+
+textarea,
+input{
+  width:100%;
+  outline:none;
+  border:1px solid var(--line);
+  border-radius:13px;
+  background:#090c12;
+  color:#fff;
+  padding:13px;
+  font-size:13px;
+}
+
+textarea{
+  height:310px;
+  resize:vertical;
+  font-family:Consolas,"Courier New",monospace;
+  line-height:1.55;
+}
+
+input:focus,
+textarea:focus{
+  border-color:rgba(255,49,81,.65);
+  box-shadow:0 0 0 3px rgba(255,49,81,.08);
+}
+
+.password{
+  position:relative;
+}
+
+.password input{
+  padding-right:52px;
+}
+
+.eye{
+  position:absolute;
+  right:7px;
+  top:7px;
+  width:38px;
+  height:38px;
+  padding:0;
+  border:0;
+  border-radius:10px;
+  background:#191e27;
+  color:#fff;
+  cursor:pointer;
+}
+
+.buttons{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:9px;
+  margin-top:12px;
+}
+
+button{
+  min-height:47px;
+  border:0;
+  border-radius:13px;
+  color:#fff;
+  cursor:pointer;
+  font-size:12px;
+  font-weight:900;
+}
+
+button:disabled{
+  opacity:.5;
+  cursor:not-allowed;
+}
+
+.primary{
+  background:linear-gradient(135deg,#ff3151,#ff7600);
+}
+
+.green{
+  background:linear-gradient(135deg,#00a96d,#00d084);
+}
+
+.blue{
+  background:linear-gradient(135deg,#276cff,#7344ff);
+}
+
+.dark{
+  background:#181e28;
+  border:1px solid var(--line);
+}
+
+.red{
+  background:#35131b;
+  border:1px solid rgba(255,49,81,.2);
+}
+
+.status{
+  margin-top:12px;
+  padding:12px;
+  border-radius:13px;
+  background:#090d13;
+  border:1px solid var(--line);
+  color:var(--muted);
+  font-size:11px;
+  line-height:1.5;
+}
+
+.status.ok{
+  color:#72ffb0;
+  border-color:rgba(0,208,132,.25);
+}
+
+.status.error{
+  color:#ff7c91;
+  border-color:rgba(255,49,81,.25);
+}
+
+.status.loading{
+  color:#ffd27b;
+}
+
+.security{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:9px;
+}
+
+.sec{
+  padding:12px;
+  border-radius:13px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.025);
+}
+
+.sec b{
+  display:block;
+  font-size:12px;
+  margin-bottom:4px;
+}
+
+.sec small{
+  font-size:10px;
+  color:var(--muted);
+}
+
+.footer{
+  text-align:center;
+  padding:24px 10px 10px;
+  color:#697281;
+  font-size:10px;
+}
+
+@media(max-width:700px){
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .full{
+    grid-column:auto;
+  }
+
+  .buttons{
+    grid-template-columns:1fr;
+  }
+
+  .security{
+    grid-template-columns:1fr;
+  }
+
+  textarea{
+    height:270px;
+  }
+}
 </style>
 </head>
+
 <body>
 
 <div class="app">
-<div class="header">
-    <div class="logo">R</div>
-    <h1>REDWAN HTML PROTECTOR V9</h1>
-    <div class="sub">AES-256-GCM • PBKDF2 • Authenticated Encryption</div>
+
+<header class="header">
+
+<div class="logo">R</div>
+
+<h1>REDWAN HTML PROTECTOR</h1>
+
+<div class="subtitle">
+V18 FIXED • AES-256-GCM • PBKDF2 • SANDBOX • INTEGRITY
 </div>
 
-<div class="card">
-<div class="title">🛡️ High Security Engine</div>
-<div class="security-list">
-<div class="security-item"><b>✓ AES-256-GCM</b><br>Authenticated encryption</div>
-<div class="security-item"><b>✓ PBKDF2-SHA-256</b><br>Password key derivation</div>
-<div class="security-item"><b>✓ 600,000 Iterations</b><br>Password stretching</div>
-<div class="security-item"><b>✓ Random Salt + IV</b><br>Fresh values per vault</div>
-<div class="security-item"><b>✓ Tamper Detection</b><br>GCM authentication</div>
-<div class="security-item"><b>✓ UTF-8 Safe</b><br>Unicode compatible</div>
-</div>
-<div id="engineStatus" class="engine">
-<span id="engineDot" class="dot"></span>
-<span id="engineText">Checking Web Crypto...</span>
-</div>
-<div class="notice">⚠️ Password হারিয়ে গেলে encrypted HTML recover করার কোনো backdoor নেই।</div>
+<div class="badges">
+<span class="badge">AES-256-GCM</span>
+<span class="badge">PBKDF2-SHA256</span>
+<span class="badge">600K ITERATIONS</span>
+<span class="badge">RANDOM SALT</span>
+<span class="badge">RANDOM IV</span>
+<span class="badge">SANDBOX</span>
+<span class="badge">INTEGRITY</span>
 </div>
 
-<div class="card">
-<div class="title">🔑 Master Password</div>
-<input id="password" type="password" autocomplete="new-password" minlength="16" placeholder="কমপক্ষে 16 character password...">
-<div class="notice">কমপক্ষে 16 character password ব্যবহার করুন। বড়/ছোট অক্ষর, সংখ্যা ও symbol ব্যবহার করা ভালো।</div>
+</header>
+
+<main class="grid">
+
+<section class="card full">
+
+<div class="title">
+<span>01</span>
+HTML SOURCE
 </div>
 
-<div class="card">
-<div class="title">📥 Original HTML (সম্পূর্ণ প্রজেক্ট এখানে দিন)</div>
-<textarea id="input" spellcheck="false" placeholder="এখানে আপনার সম্পূর্ণ HTML, CSS এবং JS কোড পেস্ট করুন..."></textarea>
-<div class="grid">
-<button onclick="openFile()">📂 Upload HTML</button>
-<button id="protectButton" class="primary" onclick="handleProtectCode()">⚡ PROTECT CODE</button>
-</div>
-<input id="file" type="file" accept=".html,.htm,text/html" hidden onchange="readFile(event)">
-<div class="progress" id="progress"><div class="progress-bar" id="progressBar"></div></div>
+<label>অরিজিনাল HTML কোড</label>
+
+<textarea
+id="source"
+spellcheck="false"
+placeholder="এখানে আপনার HTML code paste করুন..."></textarea>
+
+<div class="buttons">
+
+<button class="dark" id="openFile">
+📂 HTML FILE OPEN
+</button>
+
+<button class="red" id="clear">
+🗑 CLEAR
+</button>
+
 </div>
 
-<div class="card">
-<div class="title">🔐 Protected HTML</div>
-<div id="status" class="status"></div>
-<textarea id="output" readonly spellcheck="false" placeholder="Protection complete হলে এখানে protected HTML আসবে..."></textarea>
-<div class="grid">
-<button onclick="copyCode()">📋 COPY CODE</button>
-<button class="success" onclick="downloadCode()">⬇️ DOWNLOAD HTML</button>
-<button class="danger" onclick="clearAll()">🗑️ CLEAR</button>
-</div>
+<input
+id="file"
+type="file"
+accept=".html,.htm,.txt"
+hidden>
+
+</section>
+
+<section class="card">
+
+<div class="title">
+<span>02</span>
+PASSWORD
 </div>
 
-<div class="card">
-<div class="title">📊 Security Report</div>
-<div class="stats">
-<div class="stat"><small>Original</small><strong id="originalSize">0 KB</strong></div>
-<div class="stat"><small>Protected</small><strong id="protectedSize">0 KB</strong></div>
-<div class="stat"><small>Algorithm</small><strong>AES-256-GCM</strong></div>
-<div class="stat"><small>Status</small><strong id="state">Waiting</strong></div>
-</div>
-<div class="hash">SHA-256 Fingerprint:<div id="hash">Not generated</div></div>
+<label>PROTECTION PASSWORD</label>
+
+<div class="password">
+
+<input
+id="pass"
+type="password"
+autocomplete="new-password"
+placeholder="Minimum 8 characters">
+
+<button
+type="button"
+class="eye"
+id="eye">👁</button>
+
 </div>
 
-<div class="footer">REDWAN HTML PROTECTOR V9</div>
+<div class="status">
+Password ছাড়া encrypted HTML decrypt করা যাবে না।
+</div>
+
+</section>
+
+<section class="card">
+
+<div class="title">
+<span>03</span>
+SECURITY ENGINE
+</div>
+
+<div class="security">
+
+<div class="sec">
+<b>🔐 AES-256-GCM</b>
+<small>Authenticated encryption</small>
+</div>
+
+<div class="sec">
+<b>🧬 PBKDF2</b>
+<small>SHA-256 / 600,000 rounds</small>
+</div>
+
+<div class="sec">
+<b>🎲 Random Salt</b>
+<small>Unique encryption salt</small>
+</div>
+
+<div class="sec">
+<b>🎲 Random IV</b>
+<small>Unique AES-GCM IV</small>
+</div>
+
+<div class="sec">
+<b>🛡️ Sandbox</b>
+<small>Runtime iframe isolation</small>
+</div>
+
+<div class="sec">
+<b>✅ Integrity</b>
+<small>Authenticated ciphertext</small>
+</div>
+
+</div>
+
+</section>
+
+<section class="card full">
+
+<div class="title">
+<span>04</span>
+PROTECTION
+</div>
+
+<div class="buttons">
+
+<button class="primary" id="protect">
+🔒 PROTECT HTML
+</button>
+
+<button class="green" id="download">
+📥 DOWNLOAD PROTECTED
+</button>
+
+<button class="blue" id="decrypt">
+🔓 DECRYPT & DOWNLOAD
+</button>
+
+<button class="dark" id="copy">
+📋 COPY OUTPUT
+</button>
+
+</div>
+
+<div class="status" id="status">
+Ready.
+</div>
+
+</section>
+
+<section class="card full">
+
+<div class="title">
+<span>05</span>
+PROTECTED OUTPUT
+</div>
+
+<textarea
+id="output"
+readonly
+spellcheck="false"
+placeholder="Protect HTML চাপলে এখানে Protected HTML code তৈরি হবে..."></textarea>
+
+</section>
+
+</main>
+
+<footer class="footer">
+REDWAN HTML PROTECTOR V18 FIXED
+<br>
+Developer • A.K.M REDWAN
+</footer>
+
 </div>
 
 <script>
 "use strict";
 
-const SECURITY = Object.freeze({
-    VERSION:"REDWAN-V9",
-    ALGORITHM:"AES-GCM",
-    KDF:"PBKDF2",
-    HASH:"SHA-256",
-    ITERATIONS:600000,
-    KEY_LENGTH:256,
-    SALT_LENGTH:32,
-    IV_LENGTH:12,
-    MIN_PASSWORD_LENGTH:16
+const VERSION = "RHP18";
+const ITERATIONS = 600000;
+const SALT_SIZE = 16;
+const IV_SIZE = 12;
+
+const source = document.getElementById("source");
+const pass = document.getElementById("pass");
+const output = document.getElementById("output");
+const statusBox = document.getElementById("status");
+
+const protectButton = document.getElementById("protect");
+const downloadButton = document.getElementById("download");
+const decryptButton = document.getElementById("decrypt");
+const copyButton = document.getElementById("copy");
+
+const openFileButton = document.getElementById("openFile");
+const fileInput = document.getElementById("file");
+const clearButton = document.getElementById("clear");
+const eyeButton = document.getElementById("eye");
+
+function setStatus(message,type=""){
+  statusBox.textContent = message;
+  statusBox.className = "status";
+
+  if(type){
+    statusBox.classList.add(type);
+  }
+}
+
+function textEncode(text){
+  return new TextEncoder().encode(text);
+}
+
+function textDecode(bytes){
+  return new TextDecoder().decode(bytes);
+}
+
+function base64Encode(bytes){
+  let binary = "";
+  const chunk = 0x8000;
+
+  for(let i=0;i<bytes.length;i+=chunk){
+    binary += String.fromCharCode(
+      ...bytes.subarray(
+        i,
+        Math.min(i+chunk,bytes.length)
+      )
+    );
+  }
+
+  return btoa(binary);
+}
+
+function base64Decode(value){
+  const binary = atob(value);
+  const bytes = new Uint8Array(binary.length);
+
+  for(let i=0;i<binary.length;i++){
+    bytes[i] = binary.charCodeAt(i);
+  }
+
+  return bytes;
+}
+
+function randomBytes(length){
+  return crypto.getRandomValues(
+    new Uint8Array(length)
+  );
+}
+
+async function deriveKey(password,salt){
+
+  const passwordKey =
+    await crypto.subtle.importKey(
+      "raw",
+      textEncode(password),
+      {name:"PBKDF2"},
+      false,
+      ["deriveKey"]
+    );
+
+  return crypto.subtle.deriveKey(
+    {
+      name:"PBKDF2",
+      salt:salt,
+      iterations:ITERATIONS,
+      hash:"SHA-256"
+    },
+    passwordKey,
+    {
+      name:"AES-GCM",
+      length:256
+    },
+    false,
+    ["encrypt","decrypt"]
+  );
+}
+
+async function encryptHTML(html,password){
+
+  const salt = randomBytes(SALT_SIZE);
+  const iv = randomBytes(IV_SIZE);
+
+  const key =
+    await deriveKey(password,salt);
+
+  const encrypted =
+    await crypto.subtle.encrypt(
+      {
+        name:"AES-GCM",
+        iv:iv,
+        tagLength:128
+      },
+      key,
+      textEncode(html)
+    );
+
+  return {
+    v:VERSION,
+    algorithm:"AES-256-GCM",
+    kdf:"PBKDF2-SHA-256",
+    iterations:ITERATIONS,
+    salt:base64Encode(salt),
+    iv:base64Encode(iv),
+    ciphertext:base64Encode(
+      new Uint8Array(encrypted)
+    )
+  };
+}
+
+async function decryptPackage(pkg,password){
+
+  if(!pkg){
+    throw new Error("Empty package");
+  }
+
+  if(pkg.v !== VERSION){
+    throw new Error("Unsupported version");
+  }
+
+  if(pkg.algorithm !== "AES-256-GCM"){
+    throw new Error("Unsupported algorithm");
+  }
+
+  if(pkg.kdf !== "PBKDF2-SHA-256"){
+    throw new Error("Unsupported KDF");
+  }
+
+  const salt = base64Decode(pkg.salt);
+  const iv = base64Decode(pkg.iv);
+  const ciphertext = base64Decode(pkg.ciphertext);
+
+  const key =
+    await deriveKey(password,salt);
+
+  const plain =
+    await crypto.subtle.decrypt(
+      {
+        name:"AES-GCM",
+        iv:iv,
+        tagLength:128
+      },
+      key,
+      ciphertext
+    );
+
+  return textDecode(
+    new Uint8Array(plain)
+  );
+}
+
+function createProtectedPage(pkg){
+
+  const json = JSON.stringify(pkg);
+
+  const encoded =
+    base64Encode(
+      textEncode(json)
+    );
+
+  return `<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width,initial-scale=1">
+
+<title>REDWAN Protected HTML</title>
+
+<style>
+
+*{
+box-sizing:border-box;
+}
+
+html,body{
+margin:0;
+width:100%;
+height:100%;
+}
+
+body{
+background:#05070b;
+color:#fff;
+font-family:Arial,system-ui,sans-serif;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:20px;
+}
+
+#login{
+width:min(430px,100%);
+padding:28px;
+border-radius:24px;
+background:#11161f;
+border:1px solid rgba(255,255,255,.1);
+box-shadow:0 25px 80px rgba(0,0,0,.55);
+text-align:center;
+}
+
+.logo{
+width:65px;
+height:65px;
+margin:auto;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:19px;
+background:linear-gradient(135deg,#ff3151,#ff8500);
+font-size:29px;
+font-weight:900;
+}
+
+h2{
+margin:15px 0 6px;
+}
+
+p{
+font-size:12px;
+color:#929baa;
+line-height:1.5;
+}
+
+input{
+width:100%;
+padding:14px;
+border-radius:13px;
+border:1px solid rgba(255,255,255,.1);
+background:#090c12;
+color:#fff;
+outline:none;
+}
+
+button{
+width:100%;
+padding:14px;
+margin-top:12px;
+border:0;
+border-radius:13px;
+background:linear-gradient(135deg,#ff3151,#ff7600);
+color:#fff;
+font-weight:900;
+cursor:pointer;
+}
+
+button:disabled{
+opacity:.6;
+cursor:not-allowed;
+}
+
+#error{
+margin-top:12px;
+font-size:12px;
+color:#ff7185;
+}
+
+#frame{
+display:none;
+position:fixed;
+inset:0;
+width:100%;
+height:100%;
+border:0;
+background:#fff;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="login">
+
+<div class="logo">R</div>
+
+<h2>Protected HTML</h2>
+
+<p>
+REDWAN HTML PROTECTOR V18
+</p>
+
+<input
+id="password"
+type="password"
+placeholder="Enter password"
+autocomplete="off">
+
+<button id="unlock">
+🔓 UNLOCK
+</button>
+
+<div id="error"></div>
+
+</div>
+
+<iframe
+id="frame"
+sandbox="allow-scripts allow-forms allow-modals">
+</iframe>
+
+<script>
+(function(){
+
+"use strict";
+
+const PACKAGE = "${encoded}";
+const ROUNDS = ${ITERATIONS};
+
+function base64Decode(value){
+
+const binary = atob(value);
+
+const result =
+new Uint8Array(binary.length);
+
+for(
+let i=0;
+i<binary.length;
+i++
+){
+result[i] =
+binary.charCodeAt(i);
+}
+
+return result;
+}
+
+function encode(text){
+return new TextEncoder().encode(text);
+}
+
+function decode(bytes){
+return new TextDecoder().decode(bytes);
+}
+
+async function derive(password,salt){
+
+const base =
+await crypto.subtle.importKey(
+"raw",
+encode(password),
+{name:"PBKDF2"},
+false,
+["deriveKey"]
+);
+
+return crypto.subtle.deriveKey(
+{
+name:"PBKDF2",
+salt:salt,
+iterations:ROUNDS,
+hash:"SHA-256"
+},
+base,
+{
+name:"AES-GCM",
+length:256
+},
+false,
+["decrypt"]
+);
+
+}
+
+async function unlock(){
+
+const password =
+document.getElementById("password").value;
+
+const errorBox =
+document.getElementById("error");
+
+errorBox.textContent = "";
+
+if(!password){
+
+errorBox.textContent =
+"Password required.";
+
+return;
+}
+
+const button =
+document.getElementById("unlock");
+
+button.disabled = true;
+
+try{
+
+const packageBytes =
+base64Decode(PACKAGE);
+
+const packageText =
+decode(packageBytes);
+
+const pkg =
+JSON.parse(packageText);
+
+const salt =
+base64Decode(pkg.salt);
+
+const iv =
+base64Decode(pkg.iv);
+
+const encrypted =
+base64Decode(pkg.ciphertext);
+
+const key =
+await derive(password,salt);
+
+const decrypted =
+await crypto.subtle.decrypt(
+{
+name:"AES-GCM",
+iv:iv,
+tagLength:128
+},
+key,
+encrypted
+);
+
+const html =
+decode(
+new Uint8Array(decrypted)
+);
+
+const blob =
+new Blob(
+[html],
+{type:"text/html"}
+);
+
+const url =
+URL.createObjectURL(blob);
+
+const frame =
+document.getElementById("frame");
+
+frame.src = url;
+
+document.getElementById("login")
+.style.display = "none";
+
+frame.style.display = "block";
+
+setTimeout(
+function(){
+URL.revokeObjectURL(url);
+},
+120000
+);
+
+}catch(err){
+
+console.error(err);
+
+errorBox.textContent =
+"❌ Wrong password or corrupted protected file.";
+
+button.disabled = false;
+
+}
+
+}
+
+document
+.getElementById("unlock")
+.addEventListener(
+"click",
+unlock
+);
+
+document
+.getElementById("password")
+.addEventListener(
+"keydown",
+function(e){
+
+if(e.key === "Enter"){
+unlock();
+}
+
 });
 
-let protectedHTML = "";
+})();
+<\/script>
 
-function getCrypto(){
-    if(window.crypto && window.crypto.subtle && window.crypto.getRandomValues){
-        return window.crypto;
-    }
-    return null;
+</body>
+</html>`;
 }
 
-function cryptoAvailable(){
-    return getCrypto() !== null;
+function downloadFile(data,filename,type){
+
+const blob =
+new Blob(
+[data],
+{type:type}
+);
+
+const url =
+URL.createObjectURL(blob);
+
+const a =
+document.createElement("a");
+
+a.href = url;
+a.download = filename;
+
+document.body.appendChild(a);
+
+a.click();
+
+a.remove();
+
+setTimeout(
+function(){
+URL.revokeObjectURL(url);
+},
+1000
+);
 }
 
-function updateEngine(){
-    const dot = document.getElementById("engineDot");
-    const text = document.getElementById("engineText");
-    const engine = document.getElementById("engineStatus");
-    if(!dot || !text || !engine) return;
+/* PROTECT */
 
-    if(cryptoAvailable()){
-        dot.classList.remove("off");
-        engine.classList.remove("offline");
-        text.textContent = "✓ Web Crypto Engine Ready";
-    }else{
-        dot.classList.add("off");
-        engine.classList.add("offline");
-        text.textContent = "✕ Web Crypto API unavailable";
-    }
+protectButton.addEventListener(
+"click",
+async function(){
+
+if(
+!window.crypto ||
+!crypto.subtle
+){
+
+setStatus(
+"❌ Web Crypto API unavailable. HTTPS বা localhost ব্যবহার করুন.",
+"error"
+);
+
+return;
 }
 
-function secureRandomBytes(length){
-    const c = getCrypto();
-    if(!c) throw new Error("Web Crypto API পাওয়া যাচ্ছে না।");
-    const bytes = new Uint8Array(length);
-    c.getRandomValues(bytes);
-    return bytes;
+const html = source.value;
+const password = pass.value;
+
+if(!html.trim()){
+
+setStatus(
+"❌ HTML code দিন.",
+"error"
+);
+
+return;
 }
 
-function bytesToBase64(bytes){
-    let binary = "";
-    const chunk = 0x8000;
-    for(let i=0; i<bytes.length; i+=chunk){
-        binary += String.fromCharCode.apply(null, bytes.subarray(i, Math.min(i+chunk, bytes.length)));
-    }
-    return btoa(binary);
+if(password.length < 8){
+
+setStatus(
+"❌ Password কমপক্ষে 8 characters হতে হবে.",
+"error"
+);
+
+return;
 }
 
-function base64ToBytes(base64){
+protectButton.disabled = true;
+
+try{
+
+setStatus(
+"⏳ Encrypting... PBKDF2 চলছে.",
+"loading"
+);
+
+const pkg =
+await encryptHTML(
+html,
+password
+);
+
+const protectedPage =
+createProtectedPage(pkg);
+
+output.value =
+protectedPage;
+
+setStatus(
+"✅ V18 protection complete. Output তৈরি হয়েছে.",
+"ok"
+);
+
+}catch(error){
+
+console.error(error);
+
+setStatus(
+"❌ Encryption failed: " +
+error.message,
+"error"
+);
+
+}finally{
+
+protectButton.disabled = false;
+
+}
+
+});
+
+/* DOWNLOAD */
+
+downloadButton.addEventListener(
+"click",
+function(){
+
+if(!output.value.trim()){
+
+setStatus(
+"❌ আগে Protect HTML করুন.",
+"error"
+);
+
+return;
+}
+
+downloadFile(
+output.value,
+"REDWAN_PROTECTED_V18.html",
+"text/html;charset=utf-8"
+);
+
+setStatus(
+"✅ Protected HTML downloaded.",
+"ok"
+);
+
+});
+
+/* DECRYPT */
+
+decryptButton.addEventListener(
+"click",
+async function(){
+
+const html = output.value;
+const password = pass.value;
+
+if(!html.trim()){
+
+setStatus(
+"❌ Protected output নেই.",
+"error"
+);
+
+return;
+}
+
+if(!password){
+
+setStatus(
+"❌ Password দিন.",
+"error"
+);
+
+return;
+}
+
+const match =
+html.match(
+/const\s+PACKAGE\s*=\s*["']([^"']+)["']/
+);
+
+if(!match){
+
+setStatus(
+"❌ V18 protected package পাওয়া যায়নি.",
+"error"
+);
+
+return;
+}
+
+try{
+
+setStatus(
+"⏳ Decrypting...",
+"loading"
+);
+
+const packageBytes =
+base64Decode(match[1]);
+
+const packageText =
+textDecode(packageBytes);
+
+const pkg =
+JSON.parse(packageText);
+
+const originalHTML =
+await decryptPackage(
+pkg,
+password
+);
+
+downloadFile(
+originalHTML,
+"REDWAN_DECRYPTED_V18.html",
+"text/html;charset=utf-8"
+);
+
+setStatus(
+"✅ Decryption successful.",
+"ok"
+);
+
+}catch(error){
+
+console.error(error);
+
+setStatus(
+"❌ Wrong password অথবা file corrupted.",
+"error"
+);
+
+}
+
+});
+
+/* COPY */
+
+copyButton.addEventListener(
+"click",
+async function(){
+
+if(!output.value){
+
+setStatus(
+"❌ Output empty.",
+"error"
+);
+
+return;
+}
+
+try{
+
+await navigator.clipboard.writeText(
+output.value
+);
+
+setStatus(
+"✅ Protected code copied.",
+"ok"
+);
+
+}catch(e){
+
+output.focus();
+output.select();
+
+document.execCommand("copy");
+
+setStatus(
+"✅ Protected code copied.",
+"ok"
+);
+
+}
+
+});
+
+/* OPEN FILE */
+
+openFileButton.addEventListener(
+"click",
+function(){
+fileInput.click();
+});
+
+fileInput.addEventListener(
+"change",
+async function(){
+
+const file =
+fileInput.files[0];
+
+if(!file)return;
+
+try{
+
+const text =
+await file.text();
+
+source.value = text;
+
+setStatus(
+"✅ " + file.name + " loaded.",
+"ok"
+);
+
+}catch(e){
+
+setStatus(
+"❌ File read failed.",
+"error"
+);
+
+}
+
+});
+
+/* CLEAR */
+
+clearButton.addEventListener(
+"click",
+function(){
+
+source.value = "";
+pass.value = "";
+output.value = "";
+
+setStatus("Ready.");
+
+});
+
+/* PASSWORD */
+
+eyeButton.addEventListener(
+"click",
+function(){
+
+if(pass.type === "password"){
+
+pass.type = "text";
+eyeButton.textContent = "🙈";
+
+}else{
+
+pass.type = "password";
+eyeButton.textContent = "👁";
+
+}
+
+});
+
+</script>
+
+</body>
+</html>
+.buttons{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:9px;
+  margin-top:12px;
+}
+
+button{
+  min-height:47px;
+  border:0;
+  border-radius:13px;
+  color:#fff;
+  cursor:pointer;
+  font-size:12px;
+  font-weight:900;
+}
+
+button:disabled{
+  opacity:.5;
+  cursor:not-allowed;
+}
+
+.primary{
+  background:linear-gradient(135deg,#ff3151,#ff7600);
+}
+
+.green{
+  background:linear-gradient(135deg,#00a96d,#00d084);
+}
+
+.blue{
+  background:linear-gradient(135deg,#276cff,#7344ff);
+}
+
+.dark{
+  background:#181e28;
+  border:1px solid var(--line);
+}
+
+.red{
+  background:#35131b;
+  border:1px solid rgba(255,49,81,.2);
+}
+
+.status{
+  margin-top:12px;
+  padding:12px;
+  border-radius:13px;
+  background:#090d13;
+  border:1px solid var(--line);
+  color:var(--muted);
+  font-size:11px;
+  line-height:1.5;
+}
+
+.status.ok{
+  color:#72ffb0;
+  border-color:rgba(0,208,132,.25);
+}
+
+.status.error{
+  color:#ff7c91;
+  border-color:rgba(255,49,81,.25);
+}
+
+.status.loading{
+  color:#ffd27b;
+}
+
+.security{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:9px;
+}
+
+.sec{
+  padding:12px;
+  border-radius:13px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.025);
+}
+
+.sec b{
+  display:block;
+  font-size:12px;
+  margin-bottom:4px;
+}
+
+.sec small{
+  font-size:10px;
+  color:var(--muted);
+}
+
+.footer{
+  text-align:center;
+  padding:24px 10px 10px;
+  color:#697281;
+  font-size:10px;
+}
+
+@media(max-width:700px){
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .full{
+    grid-column:auto;
+  }
+
+  .buttons{
+    grid-template-columns:1fr;
+  }
+
+  .security{
+    grid-template-columns:1fr;
+  }
+
+  textarea{
+    height:270px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+<header class="header">
+
+<div class="logo">R</div>
+
+<h1>REDWAN HTML PROTECTOR</h1>
+
+<div class="subtitle">
+V18 FIXED • AES-256-GCM • PBKDF2 • SANDBOX • INTEGRITY
+</div>
+
+<div class="badges">
+<span class="badge">AES-256-GCM</span>
+<span class="badge">PBKDF2-SHA256</span>
+<span class="badge">600K ITERATIONS</span>
+<span class="badge">RANDOM SALT</span>
+<span class="badge">RANDOM IV</span>
+<span class="badge">SANDBOX</span>
+<span class="badge">INTEGRITY</span>
+</div>
+
+</header>
+
+<main class="grid">
+
+<section class="card full">
+
+<div class="title">
+<span>01</span>
+HTML SOURCE
+</div>
+
+<label>অরিজিনাল HTML কোড</label>
+
+<textarea
+id="source"
+spellcheck="false"
+placeholder="এখানে আপনার HTML code paste করুন..."></textarea>
+
+<div class="buttons">
+
+<button class="dark" id="openFile">
+📂 HTML FILE OPEN
+</button>
+
+<button class="red" id="clear">
+🗑 CLEAR
+</button>
+
+</div>
+
+<input
+id="file"
+type="file"
+accept=".html,.htm,.txt"
+hidden>
+
+</section>
+
+<section class="card">
+
+<div class="title">
+<span>02</span>
+PASSWORD
+</div>
+
+<label>PROTECTION PASSWORD</label>
+
+<div class="password">
+
+<input
+id="pass"
+type="password"
+autocomplete="new-password"
+placeholder="Minimum 8 characters">
+
+<button
+type="button"
+class="eye"
+id="eye">👁</button>
+
+</div>
+
+<div class="status">
+Password ছাড়া encrypted HTML decrypt করা যাবে না।
+</div>
+
+</section>
+
+<section class="card">
+
+<div class="title">
+<span>03</span>
+SECURITY ENGINE
+</div>
+
+<div class="security">
+
+<div class="sec">
+<b>🔐 AES-256-GCM</b>
+<small>Authenticated encryption</small>
+</div>
+
+<div class="sec">
+<b>🧬 PBKDF2</b>
+<small>SHA-256 / 600,000 rounds</small>
+</div>
+
+<div class="sec">
+<b>🎲 Random Salt</b>
+<small>Unique encryption salt</small>
+</div>
+
+<div class="sec">
+<b>🎲 Random IV</b>
+<small>Unique AES-GCM IV</small>
+</div>
+
+<div class="sec">
+<b>🛡️ Sandbox</b>
+<small>Runtime iframe isolation</small>
+</div>
+
+<div class="sec">
+<b>✅ Integrity</b>
+<small>Authenticated ciphertext</small>
+</div>
+
+</div>
+
+</section>
+
+<section class="card full">
+
+<div class="title">
+<span>04</span>
+PROTECTION
+</div>
+
+<div class="buttons">
+
+<button class="primary" id="protect">
+🔒 PROTECT HTML
+</button>
+
+<button class="green" id="download">
+📥 DOWNLOAD PROTECTED
+</button>
+
+<button class="blue" id="decrypt">
+🔓 DECRYPT & DOWNLOAD
+</button>
+
+<button class="dark" id="copy">
+📋 COPY OUTPUT
+</button>
+
+</div>
+
+<div class="status" id="status">
+Ready.
+</div>
+
+</section>
+
+<section class="card full">
+
+<div class="title">
+<span>05</span>
+PROTECTED OUTPUT
+</div>
+
+<textarea
+id="output"
+readonly
+spellcheck="false"
+placeholder="Protect HTML চাপলে এখানে Protected HTML code তৈরি হবে..."></textarea>
+
+</section>
+
+</main>
+
+<footer class="footer">
+REDWAN HTML PROTECTOR V18 FIXED
+<br>
+Developer • A.K.M REDWAN
+</footer>
+
+</div>
+
+<script>
+"use strict";
+
+const VERSION = "RHP18";
+const ITERATIONS = 600000;
+const SALT_SIZE = 16;
+const IV_SIZE = 12;
+
+const source = document.getElementById("source");
+const pass = document.getElementById("pass");
+const output = document.getElementById("output");
+const statusBox = document.getElementById("status");
+
+const protectButton = document.getElementById("protect");
+const downloadButton = document.getElementById("download");
+const decryptButton = document.getElementById("decrypt");
+const copyButton = document.getElementById("copy");
+
+const openFileButton = document.getElementById("openFile");
+const fileInput = document.getElementById("file");
+const clearButton = document.getElementById("clear");
+const eyeButton = document.getElementById("eye");
+
+function setStatus(message,type=""){
+  statusBox.textContent = message;
+  statusBox.className = "status";
+
+  if(type){
+    statusBox.classList.add(type);
+  }
+}
+
+function textEncode(text){
+  return new TextEncoder().encode(text);
+}
+
+function textDecode(bytes){
+  return new TextDecoder().decode(bytes);
+}
+
+function base64Encode(bytes){
+  let binary = "";
+  const chunk = 0x8000;
+
+  for(let i=0;i<bytes.length;i+=chunk){
+    binary += String.fromCharCode(
+      ...bytes.subarray(
+        i,
+        Math.min(i+chunk,bytes.length)
+      )
+    );
+  }
+
+  return btoa(binary);
+}
+
+function base64Decode(value){
+  const binary = atob(value);
+  const bytes = new Uint8Array(binary.length);
+
+  for(let i=0;i<binary.length;i++){
+    bytes[i] = binary.charCodeAt(i);
+  }
+
+  return bytes;
+}
+
+function randomBytes(length){
+  return crypto.getRandomValues(
+    new Uint8Array(length)
+  );
+}
+
+async function deriveKey(password,salt){
+
+  const passwordKey =
+    await crypto.subtle.importKey(
+      "raw",
+      textEncode(password),
+      {name:"PBKDF2"},
+      false,
+      ["deriveKey"]
+    );
+
+  return crypto.subtle.deriveKey(
+    {
+      name:"PBKDF2",
+      salt:salt,
+      iterations:ITERATIONS,
+      hash:"SHA-256"
+    },
+    passwordKey,
+    {
+      name:"AES-GCM",
+      length:256
+    },
+    false,
+    ["encrypt","decrypt"]
+  );
+}
+
+async function encryptHTML(html,password){
+
+  const salt = randomBytes(SALT_SIZE);
+  const iv = randomBytes(IV_SIZE);
+
+  const key =
+    await deriveKey(password,salt);
+
+  const encrypted =
+    await crypto.subtle.encrypt(
+      {
+        name:"AES-GCM",
+        iv:iv,
+        tagLength:128
+      },
+      key,
+      textEncode(html)
+    );
+
+  return {
+    v:VERSION,
+    algorithm:"AES-256-GCM",
+    kdf:"PBKDF2-SHA-256",
+    iterations:ITERATIONS,
+    salt:base64Encode(salt),
+    iv:base64Encode(iv),
+    ciphertext:base64Encode(
+      new Uint8Array(encrypted)
+    )
+  };
+}
+
+async function decryptPackage(pkg,password){
+
+  if(!pkg){
+    throw new Error("Empty package");
+  }
+
+  if(pkg.v !== VERSION){
+    throw new Error("Unsupported version");
+  }
+
+  if(pkg.algorithm !== "AES-256-GCM"){
+    throw new Error("Unsupported algorithm");
+  }
+
+  if(pkg.kdf !== "PBKDF2-SHA-256"){
+    throw new Error("Unsupported KDF");
+  }
+
+  const salt = base64Decode(pkg.salt);
+  const iv = base64Decode(pkg.iv);
+  const ciphertext = base64Decode(pkg.ciphertext);
+
+  const key =
+    await deriveKey(password,salt);
+
+  const plain =
+    await crypto.subtle.decrypt(
+      {
+        name:"AES-GCM",
+        iv:iv,
+        tagLength:128
+      },
+      key,
+      ciphertext
+    );
+
+  return textDecode(
+    new Uint8Array(plain)
+  );
+}
+
+function createProtectedPage(pkg){
+
+  const json = JSON.stringify(pkg);
+
+  const encoded =
+    base64Encode(
+      textEncode(json)
+    );
+
+  return `<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width,initial-scale=1">
+
+<title>REDWAN Protected HTML</title>
+
+<style>
+
+*{
+box-sizing:border-box;
+}
+
+html,body{
+margin:0;
+width:100%;
+height:100%;
+}
+
+body{
+background:#05070b;
+color:#fff;
+font-family:Arial,system-ui,sans-serif;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:20px;
+}
+
+#login{
+width:min(430px,100%);
+padding:28px;
+border-radius:24px;
+background:#11161f;
+border:1px solid rgba(255,255,255,.1);
+box-shadow:0 25px 80px rgba(0,0,0,.55);
+text-align:center;
+}
+
+.logo{
+width:65px;
+height:65px;
+margin:auto;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:19px;
+background:linear-gradient(135deg,#ff3151,#ff8500);
+font-size:29px;
+font-weight:900;
+}
+
+h2{
+margin:15px 0 6px;
+}
+
+p{
+font-size:12px;
+color:#929baa;
+line-height:1.5;
+}
+
+input{
+width:100%;
+padding:14px;
+border-radius:13px;
+border:1px solid rgba(255,255,255,.1);
+background:#090c12;
+color:#fff;
+outline:none;
+}
+
+button{
+width:100%;
+padding:14px;
+margin-top:12px;
+border:0;
+border-radius:13px;
+background:linear-gradient(135deg,#ff3151,#ff7600);
+color:#fff;
+font-weight:900;
+cursor:pointer;
+}
+
+button:disabled{
+opacity:.6;
+cursor:not-allowed;
+}
+
+#error{
+margin-top:12px;
+font-size:12px;
+color:#ff7185;
+}
+
+#frame{
+display:none;
+position:fixed;
+inset:0;
+width:100%;
+height:100%;
+border:0;
+background:#fff;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="login">
+
+<div class="logo">R</div>
+
+<h2>Protected HTML</h2>
+
+<p>
+REDWAN HTML PROTECTOR V18
+</p>
+
+<input
+id="password"
+type="password"
+placeholder="Enter password"
+autocomplete="off">
+
+<button id="unlock">
+🔓 UNLOCK
+</button>
+
+<div id="error"></div>
+
+</div>
+
+<iframe
+id="frame"
+sandbox="allow-scripts allow-forms allow-modals">
+</iframe>
+
+<script>
+(function(){
+
+"use strict";
+
+const PACKAGE = "${encoded}";
+const ROUNDS = ${ITERATIONS};
+
+function base64Decode(value){
+
+const binary = atob(value);
+
+const result =
+new Uint8Array(binary.length);
+
+for(
+let i=0;
+i<binary.length;
+i++
+){
+result[i] =
+binary.charCodeAt(i);
+}
+
+return result;
+}
+
+function encode(text){
+return new TextEncoder().encode(text);
+}
+
+function decode(bytes){
+return new TextDecoder().decode(bytes);
+}
+
+async function derive(password,salt){
+
+const base =
+await crypto.subtle.importKey(
+"raw",
+encode(password),
+{name:"PBKDF2"},
+false,
+["deriveKey"]
+);
+
+return crypto.subtle.deriveKey(
+{
+name:"PBKDF2",
+salt:salt,
+iterations:ROUNDS,
+hash:"SHA-256"
+},
+base,
+{
+name:"AES-GCM",
+length:256
+},
+false,
+["decrypt"]
+);
+
+}
+
+async function unlock(){
+
+const password =
+document.getElementById("password").value;
+
+const errorBox =
+document.getElementById("error");
+
+errorBox.textContent = "";
+
+if(!password){
+
+errorBox.textContent =
+"Password required.";
+
+return;
+}
+
+const button =
+document.getElementById("unlock");
+
+button.disabled = true;
+
+try{
+
+const packageBytes =
+base64Decode(PACKAGE);
+
+const packageText =
+decode(packageBytes);
+
+const pkg =
+JSON.parse(packageText);
+
+const salt =
+base64Decode(pkg.salt);
+
+const iv =
+base64Decode(pkg.iv);
+
+const encrypted =
+base64Decode(pkg.ciphertext);
+
+const key =
+await derive(password,salt);
+
+const decrypted =
+await crypto.subtle.decrypt(
+{
+name:"AES-GCM",
+iv:iv,
+tagLength:128
+},
+key,
+encrypted
+);
+
+const html =
+decode(
+new Uint8Array(decrypted)
+);
+
+const blob =
+new Blob(
+[html],
+{type:"text/html"}
+);
+
+const url =
+URL.createObjectURL(blob);
+
+const frame =
+document.getElementById("frame");
+
+frame.src = url;
+
+document.getElementById("login")
+.style.display = "none";
+
+frame.style.display = "block";
+
+setTimeout(
+function(){
+URL.revokeObjectURL(url);
+},
+120000
+);
+
+}catch(err){
+
+console.error(err);
+
+errorBox.textContent =
+"❌ Wrong password or corrupted protected file.";
+
+button.disabled = false;
+
+}
+
+}
+
+document
+.getElementById("unlock")
+.addEventListener(
+"click",
+unlock
+);
+
+document
+.getElementById("password")
+.addEventListener(
+"keydown",
+function(e){
+
+if(e.key === "Enter"){
+unlock();
+}
+
+});
+
+})();
+<\/script>
+
+</body>
+</html>`;
+}
+
+function downloadFile(data,filename,type){
+
+const blob =
+new Blob(
+[data],
+{type:type}
+);
+
+const url =
+URL.createObjectURL(blob);
+
+const a =
+document.createElement("a");
+
+a.href = url;
+a.download = filename;
+
+document.body.appendChild(a);
+
+a.click();
+
+a.remove();
+
+setTimeout(
+function(){
+URL.revokeObjectURL(url);
+},
+1000
+);
+}
+
+/* PROTECT */
+
+protectButton.addEventListener(
+"click",
+async function(){
+
+if(
+!window.crypto ||
+!crypto.subtle
+){
+
+setStatus(
+"❌ Web Crypto API unavailable. HTTPS বা localhost ব্যবহার করুন.",
+"error"
+);
+
+return;
+}
+
+const html = source.value;
+const password = pass.value;
+
+if(!html.trim()){
+
+setStatus(
+"❌ HTML code দিন.",
+"error"
+);
+
+return;
+}
+
+if(password.length < 8){
+
+setStatus(
+"❌ Password কমপক্ষে 8 characters হতে হবে.",
+"error"
+);
+
+return;
+}
+
+protectButton.disabled = true;
+
+try{
+
+setStatus(
+"⏳ Encrypting... PBKDF2 চলছে.",
+"loading"
+);
+
+const pkg =
+await encryptHTML(
+html,
+password
+);
+
+const protectedPage =
+createProtectedPage(pkg);
+
+output.value =
+protectedPage;
+
+setStatus(
+"✅ V18 protection complete. Output তৈরি হয়েছে.",
+"ok"
+);
+
+}catch(error){
+
+console.error(error);
+
+setStatus(
+"❌ Encryption failed: " +
+error.message,
+"error"
+);
+
+}finally{
+
+protectButton.disabled = false;
+
+}
+
+});
+
+/* DOWNLOAD */
+
+downloadButton.addEventListener(
+"click",
+function(){
+
+if(!output.value.trim()){
+
+setStatus(
+"❌ আগে Protect HTML করুন.",
+"error"
+);
+
+return;
+}
+
+downloadFile(
+output.value,
+"REDWAN_PROTECTED_V18.html",
+"text/html;charset=utf-8"
+);
+
+setStatus(
+"✅ Protected HTML downloaded.",
+"ok"
+);
+
+});
+
+/* DECRYPT */
+
+decryptButton.addEventListener(
+"click",
+async function(){
+
+const html = output.value;
+const password = pass.value;
+
+if(!html.trim()){
+
+setStatus(
+"❌ Protected output নেই.",
+"error"
+);
+
+return;
+}
+
+if(!password){
+
+setStatus(
+"❌ Password দিন.",
+"error"
+);
+
+return;
+}
+
+const match =
+html.match(
+/const\s+PACKAGE\s*=\s*["']([^"']+)["']/
+);
+
+if(!match){
+
+setStatus(
+"❌ V18 protected package পাওয়া যায়নি.",
+"error"
+);
+
+return;
+}
+
+try{
+
+setStatus(
+"⏳ Decrypting...",
+"loading"
+);
+
+const packageBytes =
+base64Decode(match[1]);
+
+const packageText =
+textDecode(packageBytes);
+
+const pkg =
+JSON.parse(packageText);
+
+const originalHTML =
+await decryptPackage(
+pkg,
+password
+);
+
+downloadFile(
+originalHTML,
+"REDWAN_DECRYPTED_V18.html",
+"text/html;charset=utf-8"
+);
+
+setStatus(
+"✅ Decryption successful.",
+"ok"
+);
+
+}catch(error){
+
+console.error(error);
+
+setStatus(
+"❌ Wrong password অথবা file corrupted.",
+"error"
+);
+
+}
+
+});
+
+/* COPY */
+
+copyButton.addEventListener(
+"click",
+async function(){
+
+if(!output.value){
+
+setStatus(
+"❌ Output empty.",
+"error"
+);
+
+return;
+}
+
+try{
+
+await navigator.clipboard.writeText(
+output.value
+);
+
+setStatus(
+"✅ Protected code copied.",
+"ok"
+);
+
+}catch(e){
+
+output.focus();
+output.select();
+
+document.execCommand("copy");
+
+setStatus(
+"✅ Protected code copied.",
+"ok"
+);
+
+}
+
+});
+
+/* OPEN FILE */
+
+openFileButton.addEventListener(
+"click",
+function(){
+fileInput.click();
+});
+
+fileInput.addEventListener(
+"change",
+async function(){
+
+const file =
+fileInput.files[0];
+
+if(!file)return;
+
+try{
+
+const text =
+await file.text();
+
+source.value = text;
+
+setStatus(
+"✅ " + file.name + " loaded.",
+"ok"
+);
+
+}catch(e){
+
+setStatus(
+"❌ File read failed.",
+"error"
+);
+
+}
+
+});
+
+/* CLEAR */
+
+clearButton.addEventListener(
+"click",
+function(){
+
+source.value = "";
+pass.value = "";
+output.value = "";
+
+setStatus("Ready.");
+
+});
+
+/* PASSWORD */
+
+eyeButton.addEventListener(
+"click",
+function(){
+
+if(pass.type === "password"){
+
+pass.type = "text";
+eyeButton.textContent = "🙈";
+
+}else{
+
+pass.type = "password";
+eyeButton.textContent = "👁";
+
+}
+
+});
+
+</script>
+
+</body>
+</html>
+.buttons{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:9px;
+  margin-top:12px;
+}
+
+button{
+  min-height:47px;
+  border:0;
+  border-radius:13px;
+  color:#fff;
+  cursor:pointer;
+  font-size:12px;
+  font-weight:900;
+}
+
+button:disabled{
+  opacity:.5;
+  cursor:not-allowed;
+}
+
+.primary{
+  background:linear-gradient(135deg,#ff3151,#ff7600);
+}
+
+.green{
+  background:linear-gradient(135deg,#00a96d,#00d084);
+}
+
+.blue{
+  background:linear-gradient(135deg,#276cff,#7344ff);
+}
+
+.dark{
+  background:#181e28;
+  border:1px solid var(--line);
+}
+
+.red{
+  background:#35131b;
+  border:1px solid rgba(255,49,81,.2);
+}
+
+.status{
+  margin-top:12px;
+  padding:12px;
+  border-radius:13px;
+  background:#090d13;
+  border:1px solid var(--line);
+  color:var(--muted);
+  font-size:11px;
+  line-height:1.5;
+}
+
+.status.ok{
+  color:#72ffb0;
+  border-color:rgba(0,208,132,.25);
+}
+
+.status.error{
+  color:#ff7c91;
+  border-color:rgba(255,49,81,.25);
+}
+
+.status.loading{
+  color:#ffd27b;
+}
+
+.security{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:9px;
+}
+
+.sec{
+  padding:12px;
+  border-radius:13px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.025);
+}
+
+.sec b{
+  display:block;
+  font-size:12px;
+  margin-bottom:4px;
+}
+
+.sec small{
+  font-size:10px;
+  color:var(--muted);
+}
+
+.footer{
+  text-align:center;
+  padding:24px 10px 10px;
+  color:#697281;
+  font-size:10px;
+}
+
+@media(max-width:700px){
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .full{
+    grid-column:auto;
+  }
+
+  .buttons{
+    grid-template-columns:1fr;
+  }
+
+  .security{
+    grid-template-columns:1fr;
+  }
+
+  textarea{
+    height:270px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+<header class="header">
+
+<div class="logo">R</div>
+
+<h1>REDWAN HTML PROTECTOR</h1>
+
+<div class="subtitle">
+V18 FIXED • AES-256-GCM • PBKDF2 • SANDBOX • INTEGRITY
+</div>
+
+<div class="badges">
+<span class="badge">AES-256-GCM</span>
+<span class="badge">PBKDF2-SHA256</span>
+<span class="badge">600K ITERATIONS</span>
+<span class="badge">RANDOM SALT</span>
+<span class="badge">RANDOM IV</span>
+<span class="badge">SANDBOX</span>
+<span class="badge">INTEGRITY</span>
+</div>
+
+</header>
+
+<main class="grid">
+
+<section class="card full">
+
+<div class="title">
+<span>01</span>
+HTML SOURCE
+</div>
+
+<label>অরিজিনাল HTML কোড</label>
+
+<textarea
+id="source"
+spellcheck="false"
+placeholder="এখানে আপনার HTML code paste করুন..."></textarea>
+
+<div class="buttons">
+
+<button class="dark" id="openFile">
+📂 HTML FILE OPEN
+</button>
+
+<button class="red" id="clear">
+🗑 CLEAR
+</button>
+
+</div>
+
+<input
+id="file"
+type="file"
+accept=".html,.htm,.txt"
+hidden>
+
+</section>
+
+<section class="card">
+
+<div class="title">
+<span>02</span>
+PASSWORD
+</div>
+
+<label>PROTECTION PASSWORD</label>
+
+<div class="password">
+
+<input
+id="pass"
+type="password"
+autocomplete="new-password"
+placeholder="Minimum 8 characters">
+
+<button
+type="button"
+class="eye"
+id="eye">👁</button>
+
+</div>
+
+<div class="status">
+Password ছাড়া encrypted HTML decrypt করা যাবে না।
+</div>
+
+</section>
+
+<section class="card">
+
+<div class="title">
+<span>03</span>
+SECURITY ENGINE
+</div>
+
+<div class="security">
+
+<div class="sec">
+<b>🔐 AES-256-GCM</b>
+<small>Authenticated encryption</small>
+</div>
+
+<div class="sec">
+<b>🧬 PBKDF2</b>
+<small>SHA-256 / 600,000 rounds</small>
+</div>
+
+<div class="sec">
+<b>🎲 Random Salt</b>
+<small>Unique encryption salt</small>
+</div>
+
+<div class="sec">
+<b>🎲 Random IV</b>
+<small>Unique AES-GCM IV</small>
+</div>
+
+<div class="sec">
+<b>🛡️ Sandbox</b>
+<small>Runtime iframe isolation</small>
+</div>
+
+<div class="sec">
+<b>✅ Integrity</b>
+<small>Authenticated ciphertext</small>
+</div>
+
+</div>
+
+</section>
+
+<section class="card full">
+
+<div class="title">
+<span>04</span>
+PROTECTION
+</div>
+
+<div class="buttons">
+
+<button class="primary" id="protect">
+🔒 PROTECT HTML
+</button>
+
+<button class="green" id="download">
+📥 DOWNLOAD PROTECTED
+</button>
+
+<button class="blue" id="decrypt">
+🔓 DECRYPT & DOWNLOAD
+</button>
+
+<button class="dark" id="copy">
+📋 COPY OUTPUT
+</button>
+
+</div>
+
+<div class="status" id="status">
+Ready.
+</div>
+
+</section>
+
+<section class="card full">
+
+<div class="title">
+<span>05</span>
+PROTECTED OUTPUT
+</div>
+
+<textarea
+id="output"
+readonly
+spellcheck="false"
+placeholder="Protect HTML চাপলে এখানে Protected HTML code তৈরি হবে..."></textarea>
+
+</section>
+
+</main>
+
+<footer class="footer">
+REDWAN HTML PROTECTOR V18 FIXED
+<br>
+Developer • A.K.M REDWAN
+</footer>
+
+</div>
+
+<script>
+"use strict";
+
+const VERSION = "RHP18";
+const ITERATIONS = 600000;
+const SALT_SIZE = 16;
+const IV_SIZE = 12;
+
+const source = document.getElementById("source");
+const pass = document.getElementById("pass");
+const output = document.getElementById("output");
+const statusBox = document.getElementById("status");
+
+const protectButton = document.getElementById("protect");
+const downloadButton = document.getElementById("download");
+const decryptButton = document.getElementById("decrypt");
+const copyButton = document.getElementById("copy");
+
+const openFileButton = document.getElementById("openFile");
+const fileInput = document.getElementById("file");
+const clearButton = document.getElementById("clear");
+const eyeButton = document.getElementById("eye");
+
+function setStatus(message,type=""){
+  statusBox.textContent = message;
+  statusBox.className = "status";
+
+  if(type){
+    statusBox.classList.add(type);
+  }
+}
+
+function textEncode(text){
+  return new TextEncoder().encode(text);
+}
+
+function textDecode(bytes){
+  return new TextDecoder().decode(bytes);
+}
+
+function base64Encode(bytes){
+  let binary = "";
+  const chunk = 0x8000;
+
+  for(let i=0;i<bytes.length;i+=chunk){
+    binary += String.fromCharCode(
+      ...bytes.subarray(
+        i,
+        Math.min(i+chunk,bytes.length)
+      )
+    );
+  }
+
+  return btoa(binary);
+}
+
+function base64Decode(value){
+  const binary = atob(value);
+  const bytes = new Uint8Array(binary.length);
+
+  for(let i=0;i<binary.length;i++){
+    bytes[i] = binary.charCodeAt(i);
+  }
+
+  return bytes;
+}
+
+function randomBytes(length){
+  return crypto.getRandomValues(
+    new Uint8Array(length)
+  );
+}
+
+async function deriveKey(password,salt){
+
+  const passwordKey =
+    await crypto.subtle.importKey(
+      "raw",
+      textEncode(password),
+      {name:"PBKDF2"},
+      false,
+      ["deriveKey"]
+    );
+
+  return crypto.subtle.deriveKey(
+    {
+      name:"PBKDF2",
+      salt:salt,
+      iterations:ITERATIONS,
+      hash:"SHA-256"
+    },
+    passwordKey,
+    {
+      name:"AES-GCM",
+      length:256
+    },
+    false,
+    ["encrypt","decrypt"]
+  );
+}
+
+async function encryptHTML(html,password){
+
+  const salt = randomBytes(SALT_SIZE);
+  const iv = randomBytes(IV_SIZE);
+
+  const key =
+    await deriveKey(password,salt);
+
+  const encrypted =
+    await crypto.subtle.encrypt(
+      {
+        name:"AES-GCM",
+        iv:iv,
+        tagLength:128
+      },
+      key,
+      textEncode(html)
+    );
+
+  return {
+    v:VERSION,
+    algorithm:"AES-256-GCM",
+    kdf:"PBKDF2-SHA-256",
+    iterations:ITERATIONS,
+    salt:base64Encode(salt),
+    iv:base64Encode(iv),
+    ciphertext:base64Encode(
+      new Uint8Array(encrypted)
+    )
+  };
+}
+
+async function decryptPackage(pkg,password){
+
+  if(!pkg){
+    throw new Error("Empty package");
+  }
+
+  if(pkg.v !== VERSION){
+    throw new Error("Unsupported version");
+  }
+
+  if(pkg.algorithm !== "AES-256-GCM"){
+    throw new Error("Unsupported algorithm");
+  }
+
+  if(pkg.kdf !== "PBKDF2-SHA-256"){
+    throw new Error("Unsupported KDF");
+  }
+
+  const salt = base64Decode(pkg.salt);
+  const iv = base64Decode(pkg.iv);
+  const ciphertext = base64Decode(pkg.ciphertext);
+
+  const key =
+    await deriveKey(password,salt);
+
+  const plain =
+    await crypto.subtle.decrypt(
+      {
+        name:"AES-GCM",
+        iv:iv,
+        tagLength:128
+      },
+      key,
+      ciphertext
+    );
+
+  return textDecode(
+    new Uint8Array(plain)
+  );
+}
+
+function createProtectedPage(pkg){
+
+  const json = JSON.stringify(pkg);
+
+  const encoded =
+    base64Encode(
+      textEncode(json)
+    );
+
+  return `<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width,initial-scale=1">
+
+<title>REDWAN Protected HTML</title>
+
+<style>
+
+*{
+box-sizing:border-box;
+}
+
+html,body{
+margin:0;
+width:100%;
+height:100%;
+}
+
+body{
+background:#05070b;
+color:#fff;
+font-family:Arial,system-ui,sans-serif;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:20px;
+}
+
+#login{
+width:min(430px,100%);
+padding:28px;
+border-radius:24px;
+background:#11161f;
+border:1px solid rgba(255,255,255,.1);
+box-shadow:0 25px 80px rgba(0,0,0,.55);
+text-align:center;
+}
+
+.logo{
+width:65px;
+height:65px;
+margin:auto;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:19px;
+background:linear-gradient(135deg,#ff3151,#ff8500);
+font-size:29px;
+font-weight:900;
+}
+
+h2{
+margin:15px 0 6px;
+}
+
+p{
+font-size:12px;
+color:#929baa;
+line-height:1.5;
+}
+
+input{
+width:100%;
+padding:14px;
+border-radius:13px;
+border:1px solid rgba(255,255,255,.1);
+background:#090c12;
+color:#fff;
+outline:none;
+}
+
+button{
+width:100%;
+padding:14px;
+margin-top:12px;
+border:0;
+border-radius:13px;
+background:linear-gradient(135deg,#ff3151,#ff7600);
+color:#fff;
+font-weight:900;
+cursor:pointer;
+}
+
+button:disabled{
+opacity:.6;
+cursor:not-allowed;
+}
+
+#error{
+margin-top:12px;
+font-size:12px;
+color:#ff7185;
+}
+
+#frame{
+display:none;
+position:fixed;
+inset:0;
+width:100%;
+height:100%;
+border:0;
+background:#fff;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="login">
+
+<div class="logo">R</div>
+
+<h2>Protected HTML</h2>
+
+<p>
+REDWAN HTML PROTECTOR V18
+</p>
+
+<input
+id="password"
+type="password"
+placeholder="Enter password"
+autocomplete="off">
+
+<button id="unlock">
+🔓 UNLOCK
+</button>
+
+<div id="error"></div>
+
+</div>
+
+<iframe
+id="frame"
+sandbox="allow-scripts allow-forms allow-modals">
+</iframe>
+
+<script>
+(function(){
+
+"use strict";
+
+const PACKAGE = "${encoded}";
+const ROUNDS = ${ITERATIONS};
+
+function base64Decode(value){
+
+const binary = atob(value);
+
+const result =
+new Uint8Array(binary.length);
+
+for(
+let i=0;
+i<binary.length;
+i++
+){
+result[i] =
+binary.charCodeAt(i);
+}
+
+return result;
+}
+
+function encode(text){
+return new TextEncoder().encode(text);
+}
+
+function decode(bytes){
+return new TextDecoder().decode(bytes);
+}
+
+async function derive(password,salt){
+
+const base =
+await crypto.subtle.importKey(
+"raw",
+encode(password),
+{name:"PBKDF2"},
+false,
+["deriveKey"]
+);
+
+return crypto.subtle.deriveKey(
+{
+name:"PBKDF2",
+salt:salt,
+iterations:ROUNDS,
+hash:"SHA-256"
+},
+base,
+{
+name:"AES-GCM",
+length:256
+},
+false,
+["decrypt"]
+);
+
+}
+
+async function unlock(){
+
+const password =
+document.getElementById("password").value;
+
+const errorBox =
+document.getElementById("error");
+
+errorBox.textContent = "";
+
+if(!password){
+
+errorBox.textContent =
+"Password required.";
+
+return;
+}
+
+const button =
+document.getElementById("unlock");
+
+button.disabled = true;
+
+try{
+
+const packageBytes =
+base64Decode(PACKAGE);
+
+const packageText =
+decode(packageBytes);
+
+const pkg =
+JSON.parse(packageText);
+
+const salt =
+base64Decode(pkg.salt);
+
+const iv =
+base64Decode(pkg.iv);
+
+const encrypted =
+base64Decode(pkg.ciphertext);
+
+const key =
+await derive(password,salt);
+
+const decrypted =
+await crypto.subtle.decrypt(
+{
+name:"AES-GCM",
+iv:iv,
+tagLength:128
+},
+key,
+encrypted
+);
+
+const html =
+decode(
+new Uint8Array(decrypted)
+);
+
+const blob =
+new Blob(
+[html],
+{type:"text/html"}
+);
+
+const url =
+URL.createObjectURL(blob);
+
+const frame =
+document.getElementById("frame");
+
+frame.src = url;
+
+document.getElementById("login")
+.style.display = "none";
+
+frame.style.display = "block";
+
+setTimeout(
+function(){
+URL.revokeObjectURL(url);
+},
+120000
+);
+
+}catch(err){
+
+console.error(err);
+
+errorBox.textContent =
+"❌ Wrong password or corrupted protected file.";
+
+button.disabled = false;
+
+}
+
+}
+
+document
+.getElementById("unlock")
+.addEventListener(
+"click",
+unlock
+);
+
+document
+.getElementById("password")
+.addEventListener(
+"keydown",
+function(e){
+
+if(e.key === "Enter"){
+unlock();
+}
+
+});
+
+})();
+<\/script>
+
+</body>
+</html>`;
+}
+
+function downloadFile(data,filename,type){
+
+const blob =
+new Blob(
+[data],
+{type:type}
+);
+
+const url =
+URL.createObjectURL(blob);
+
+const a =
+document.createElement("a");
+
+a.href = url;
+a.download = filename;
+
+document.body.appendChild(a);
+
+a.click();
+
+a.remove();
+
+setTimeout(
+function(){
+URL.revokeObjectURL(url);
+},
+1000
+);
+}
+
+/* PROTECT */
+
+protectButton.addEventListener(
+"click",
+async function(){
+
+if(
+!window.crypto ||
+!crypto.subtle
+){
+
+setStatus(
+"❌ Web Crypto API unavailable. HTTPS বা localhost ব্যবহার করুন.",
+"error"
+);
+
+return;
+}
+
+const html = source.value;
+const password = pass.value;
+
+if(!html.trim()){
+
+setStatus(
+"❌ HTML code দিন.",
+"error"
+);
+
+return;
+}
+
+if(password.length < 8){
+
+setStatus(
+"❌ Password কমপক্ষে 8 characters হতে হবে.",
+"error"
+);
+
+return;
+}
+
+protectButton.disabled = true;
+
+try{
+
+setStatus(
+"⏳ Encrypting... PBKDF2 চলছে.",
+"loading"
+);
+
+const pkg =
+await encryptHTML(
+html,
+password
+);
+
+const protectedPage =
+createProtectedPage(pkg);
+
+output.value =
+protectedPage;
+
+setStatus(
+"✅ V18 protection complete. Output তৈরি হয়েছে.",
+"ok"
+);
+
+}catch(error){
+
+console.error(error);
+
+setStatus(
+"❌ Encryption failed: " +
+error.message,
+"error"
+);
+
+}finally{
+
+protectButton.disabled = false;
+
+}
+
+});
+
+/* DOWNLOAD */
+
+downloadButton.addEventListener(
+"click",
+function(){
+
+if(!output.value.trim()){
+
+setStatus(
+"❌ আগে Protect HTML করুন.",
+"error"
+);
+
+return;
+}
+
+downloadFile(
+output.value,
+"REDWAN_PROTECTED_V18.html",
+"text/html;charset=utf-8"
+);
+
+setStatus(
+"✅ Protected HTML downloaded.",
+"ok"
+);
+
+});
+
+/* DECRYPT */
+
+decryptButton.addEventListener(
+"click",
+async function(){
+
+const html = output.value;
+const password = pass.value;
+
+if(!html.trim()){
+
+setStatus(
+"❌ Protected output নেই.",
+"error"
+);
+
+return;
+}
+
+if(!password){
+
+setStatus(
+"❌ Password দিন.",
+"error"
+);
+
+return;
+}
+
+const match =
+html.match(
+/const\s+PACKAGE\s*=\s*["']([^"']+)["']/
+);
+
+if(!match){
+
+setStatus(
+"❌ V18 protected package পাওয়া যায়নি.",
+"error"
+);
+
+return;
+}
+
+try{
+
+setStatus(
+"⏳ Decrypting...",
+"loading"
+);
+
+const packageBytes =
+base64Decode(match[1]);
+
+const packageText =
+textDecode(packageBytes);
+
+const pkg =
+JSON.parse(packageText);
+
+const originalHTML =
+await decryptPackage(
+pkg,
+password
+);
+
+downloadFile(
+originalHTML,
+"REDWAN_DECRYPTED_V18.html",
+"text/html;charset=utf-8"
+);
+
+setStatus(
+"✅ Decryption successful.",
+"ok"
+);
+
+}catch(error){
+
+console.error(error);
+
+setStatus(
+"❌ Wrong password অথবা file corrupted.",
+"error"
+);
+
+}
+
+});
+
+/* COPY */
+
+copyButton.addEventListener(
+"click",
+async function(){
+
+if(!output.value){
+
+setStatus(
+"❌ Output empty.",
+"error"
+);
+
+return;
+}
+
+try{
+
+await navigator.clipboard.writeText(
+output.value
+);
+
+setStatus(
+"✅ Protected code copied.",
+"ok"
+);
+
+}catch(e){
+
+output.focus();
+output.select();
+
+document.execCommand("copy");
+
+setStatus(
+"✅ Protected code copied.",
+"ok"
+);
+
+}
+
+});
+
+/* OPEN FILE */
+
+openFileButton.addEventListener(
+"click",
+function(){
+fileInput.click();
+});
+
+fileInput.addEventListener(
+"change",
+async function(){
+
+const file =
+fileInput.files[0];
+
+if(!file)return;
+
+try{
+
+const text =
+await file.text();
+
+source.value = text;
+
+setStatus(
+"✅ " + file.name + " loaded.",
+"ok"
+);
+
+}catch(e){
+
+setStatus(
+"❌ File read failed.",
+"error"
+);
+
+}
+
+});
+
+/* CLEAR */
+
+clearButton.addEventListener(
+"click",
+function(){
+
+source.value = "";
+pass.value = "";
+output.value = "";
+
+setStatus("Ready.");
+
+});
+
+/* PASSWORD */
+
+eyeButton.addEventListener(
+"click",
+function(){
+
+if(pass.type === "password"){
+
+pass.type = "text";
+eyeButton.textContent = "🙈";
+
+}else{
+
+pass.type = "password";
+eyeButton.textContent = "👁";
+
+}
+
+});
+
+</script>
+
+</body>
+</html>function base64ToBytes(base64){
     const binary = atob(base64);
     const bytes = new Uint8Array(binary.length);
     for(let i=0; i<binary.length; i++){
